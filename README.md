@@ -1,1 +1,1 @@
-# holbertonschool-higher_level_programming
+This repo is for all the higher level programming projects for Holberton School
