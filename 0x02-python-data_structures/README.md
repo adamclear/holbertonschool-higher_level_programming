@@ -1,0 +1,1 @@
+This lesson is all about data structures in python
