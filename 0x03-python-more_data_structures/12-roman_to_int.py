@@ -12,4 +12,6 @@ def roman_to_int(roman_string):
                 tempval = tempval - preval
             value += tempval
             preval = tempval
+        else:
+            return 0
     return value
