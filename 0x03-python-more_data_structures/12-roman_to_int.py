@@ -7,9 +7,9 @@ def roman_to_int(roman_string):
     for x in roman_string:
         if x in roman.keys():
             tempval = roman[x]
-        if preval < tempval:
-            value = value - preval
-            tempval = tempval - preval
-        value += tempval
-        preval = tempval
+            if preval < tempval:
+                value = value - preval
+                tempval = tempval - preval
+            value += tempval
+            preval = tempval
     return value
