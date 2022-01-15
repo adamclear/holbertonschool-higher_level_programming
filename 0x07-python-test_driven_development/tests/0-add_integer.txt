@@ -1,0 +1,59 @@
+# doctest_0-add_integer.txt
+
+Importing function from module:
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Adding two positive integers:
+    >>> add_integer(2, 2)
+    4
+
+Adding two negative integers:
+    >>> add_integer(-2, -2)
+    -4
+
+Adding one positive integer & one negative integer:
+    >>> add_integer(1, -5)
+    -4
+
+Passing no arguments:
+    >>> add_integer()
+    Traceback (most recent call last):
+    TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Passing incorrect argument type for 'a':
+    >>> add_integer("Noice!", 5)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+Passing incorrect argument type for 'b':
+    >>> add_integer(5, "Noice!")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+Passing only one integer argument:
+    >>> add_integer(2)
+    100
+
+Adding two positive floats:
+    >>> add_integer(25.5, 25.5)
+    50
+
+Adding two negative floats:
+    >>> add_integer(-25.5, -25.5)
+    -50
+
+Adding one positive float & one negative float:
+    >>> add_integer(-75.5, 25.5)
+    -50
+
+Passing a float for 'a' with no second argument:
+    >>> add_integer(2.5)
+    100
+
+Adding a positive float and a negative integer:
+    >>> add_integer(25.5, -75)
+    -50
+
+Adding a negative float and a positive integer:
+    >>> add_integer(-25.5, 75)
+    50
