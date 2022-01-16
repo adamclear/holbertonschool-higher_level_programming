@@ -1,0 +1,38 @@
+# doctest_3-say_my_name.txt
+
+Importing function from module:
+    >>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Passing two strings as arguments:
+    >>> say_my_name("Adam", "Clear")
+    My name is Adam Clear
+
+Passing one string as argument:
+    >>> say_my_name("Adam")
+    My name is Adam 
+
+Passing non-string as 'first_name' argument:
+    >>> say_my_name(2, "Clear")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+Passing non-string as 'last_name' argument:
+    >>> say_my_name("Adam", 2)
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+Setting up two string variables:
+    >>> firstname = "Adam"
+    >>> lastname = "Clear"
+
+Passing two string variables as arguments:
+    >>> say_my_name(firstname, lastname)
+    My name is Adam Clear
+
+Setting up one variable as non-string:
+    >>> firstname = 2
+
+Passing one non-string variable as argument:
+    >>> say_my_name(firstname, lastname)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
