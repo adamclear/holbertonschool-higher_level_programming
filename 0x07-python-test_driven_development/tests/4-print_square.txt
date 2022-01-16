@@ -1,0 +1,31 @@
+# doctest_4-print_square.txt
+
+Importing function from module:
+    >>> print_square = __import__("4-print_square").print_square
+
+Size is integer above 0:
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+Size is integer equal to 0:
+    >>> print_square(0)
+    <BLANKLINE>
+
+Size is integer less than 0:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
+
+Size is float less than 0:
+    >>> print_square(-0.5)
+    Traceback (most recent call last):
+    TypeError: size must be an integer
+
+Size is not an integer:
+    >>> print_square("Noice!")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
