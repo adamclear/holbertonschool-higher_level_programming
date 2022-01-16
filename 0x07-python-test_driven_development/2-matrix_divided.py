@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This module contains the function matrix_divided.
-python3 -c 'print(__import__("my_module").__doc__)'
+python3 -c 'print(__import__("2-matrix_divided").__doc__)'
 """
 
 
@@ -10,7 +10,7 @@ def matrix_divided(matrix, div):
     This function divides each element of 'matrix' by the
     number given, 'div', and returns a new matrix consisting
     of the quotients as a float rounded to two decimal places.
-    python3 -c 'print(__import__("my_module").my_function.__doc__)'
+    python3 -c 'print(__import__("2-matrix_divided").matrix_divided.__doc__)'
     """
     matrix_redivided = []
     row_len = 0
