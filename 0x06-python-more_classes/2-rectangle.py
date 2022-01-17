@@ -78,8 +78,8 @@ class Rectangle:
         Prints the rectangle to stdout with the '#' character.
         """
         if self.__width > 0 and self.__height > 0:
-            for x in len(self.__height):
-                for y in len(self.__width):
+            for x in range(len(self.__height)):
+                for y in range(len(self.__width)):
                     print("#", end="")
                 print()
 
@@ -90,9 +90,9 @@ class Rectangle:
         """
         rect_string = ""
         if self.__width > 0 and self.__height > 0:
-            for x in len(self.__height):
+            for x in range(len(self.__height)):
                 for y in len(self.__width):
                     rect_string += y
-                if x != len(self.__height) - 1:
+                if x != range(len(self.__height)) - 1:
                     rect_string += '\n'
         return rect_string
