@@ -30,6 +30,8 @@ class test_max_integer(unittest.TestCase):
         This function tests max_integer with positive integers.
         """
         self.assertEqual(max_integer([1, 2, 3]), 3)
+        self.assertEqual(max_integer([1, 3, 2]), 3)
+        self.assertEqual(max_integer([3, 1, 2]), 3)
 
     def test_negative_integers(self):
         """
@@ -55,12 +57,6 @@ class test_max_integer(unittest.TestCase):
         """
         self.assertRaises(TypeError, max_integer, [1, "two", 3],
                           msg="unorderable types: str() > int()")
-
-    def test_max_middle(self):
-        """
-        This function tests max_integer with the max int in middle
-        """
-        self.assertEqual(max_integer([1, 10, 2]), 10)
 
     def test_one_element(self):
         """
