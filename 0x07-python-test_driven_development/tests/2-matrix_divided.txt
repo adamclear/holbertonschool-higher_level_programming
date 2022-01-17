@@ -54,3 +54,17 @@ Matrix is valid floats & div is valid float:
 Matrix is valid floats & div is valid int:
     >>> matrix_divided(matrix, 2)
     [[1.17, 2.27, 2.83], [3.38, 3.94, 4.5]]
+
+Running with div as an overflow float:
+    >>> matrix_divided(matrix, float('inf'))
+    [[0.23, 0.45, 0.57], [0.68, 0.79, 0.9]]
+
+Running missing one argument:
+    >>> matrix_divided(matrix)
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Running missing two arguments:
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
