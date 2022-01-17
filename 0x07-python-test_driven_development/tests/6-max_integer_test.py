@@ -56,5 +56,17 @@ class test_max_integer(unittest.TestCase):
         self.assertRaises(TypeError, max_integer, [1, "two", 3],
                           msg="unorderable types: str() > int()")
 
+    def test_max_middle(self):
+        """
+        This function tests max_integer with the max int in middle
+        """
+        self.assertEqual(max_integer([1, 10, 2]), 10)
+
+    def test_one_element(self):
+        """
+        This function tests max_integer with a list of one element
+        """
+        self.assertEqual(max_integer([10]), 10)
+
 if __name__ == "__main__":
     unittest.main()
