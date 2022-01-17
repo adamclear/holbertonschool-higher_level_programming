@@ -3,7 +3,7 @@
 Importing function from module:
     >>> text_indentation = __import__("5-text_indentation").text_indentation
 
-Running function with string:
+Running function with string, last word no limiter:
     >>> text_indentation("Hello. Hi? Yes: Five")
     Hello.
     <BLANKLINE>
@@ -12,6 +12,17 @@ Running function with string:
     Yes:
     <BLANKLINE>
     Five
+
+Running function with string, last word has limiter:
+    >>> text_indentation("Hello. Hi? Yes: Five.")
+    Hello.
+    <BLANKLINE>
+    Hi?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    Five.
+    <BLANKLINE>
 
 Running function with non-string:
     >>> text_indentation(2)
@@ -25,6 +36,7 @@ Running function with only limiting characters:
     ?
     <BLANKLINE>
     :
+    <BLANKLINE>
 
 Setting up string variable:
     >>> stringvar = "Hello. Hi? Yes: Five"

@@ -11,14 +11,15 @@ def text_indentation(text):
     """
     y = 1
     buffer = ''
+    limiters = ['.', '?', ':']
     if type(text) is not str:
         raise TypeError("text must be a string")
     for x in text:
         buffer = buffer + x
-        if y == len(text):
+        if y == len(text) and x not in limiters:
             buffer = buffer.strip()
-            print(buffer)
-        elif x == '.' or x == '?' or x == ':':
+            print(buffer, end="")
+        elif x in limiters:
             buffer = buffer.strip()
             print(buffer)
             print()
