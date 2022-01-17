@@ -1,0 +1,16 @@
+# doctest_5-text_indentation.txt
+
+Importing function from module:
+    >>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Running function with string:
+    >>> text_indentation("Hello. Hi? Yes: Five")
+    Hello.
+    <BLANKLINE>
+    Hi?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    Five
+
+

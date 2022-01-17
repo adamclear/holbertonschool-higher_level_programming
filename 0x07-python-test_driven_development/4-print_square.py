@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
 This module contains the function print_square.
-python3 -c 'print(__import__("4-print_square").__doc__)'
 """
 
 
@@ -10,7 +9,6 @@ def print_square(size):
     This function prints a square to stdout based on 'size'.
     'size' must be an integer or float equal to or greater
     than 0.
-    python3 -c 'print(__import__("4-print_square").print_square.__doc__)'
     """
     if type(size) is float and size < 0:
         raise TypeError("size must be an integer")
