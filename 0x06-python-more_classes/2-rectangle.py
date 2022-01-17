@@ -73,17 +73,17 @@ class Rectangle:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
-    def print(self):
-        """
-        Prints the rectangle to stdout with the '#' character.
-        """
-        if self.__width > 0 and self.__height > 0:
-            for x in range(self.height):
-                for y in range(self.width):
-                    print("#", end="")
-                print()
+    # def print(self):
+    #     """
+    #     Prints the rectangle to stdout with the '#' character.
+    #     """
+    #     if self.__width > 0 and self.__height > 0:
+    #         for x in range(self.height):
+    #             for y in range(self.width):
+    #                 print("#", end="")
+    #             print()
 
-    def str(self):
+    def __str__(self):
         """
         Creates a string that represents the rectangle using
         the '#' character.
