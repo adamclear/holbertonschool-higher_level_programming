@@ -13,4 +13,28 @@ Running function with string:
     <BLANKLINE>
     Five
 
+Running function with non-string:
+    >>> text_indentation(2)
+    Traceback (most recent call last):
+    TypeError: text must be a string
 
+Running function with only limiting characters:
+    >>> text_indentation(".   ?   :")
+    .
+    <BLANKLINE>
+    ?
+    <BLANKLINE>
+    :
+
+Setting up string variable:
+    >>> stringvar = "Hello. Hi? Yes: Five"
+
+Running function with stringvar:
+    >>> text_indentation(stringvar)
+    Hello.
+    <BLANKLINE>
+    Hi?
+    <BLANKLINE>
+    Yes:
+    <BLANKLINE>
+    Five
