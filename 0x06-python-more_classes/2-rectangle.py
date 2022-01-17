@@ -83,6 +83,6 @@ class Rectangle:
             for x in range(self.__height):
                 for y in range(self.__width):
                     rect_string += '#'
-                if x != range(self.__height) - 1:
+                if x != len(self.__height) - 1:
                     rect_string += '\n'
         return rect_string
