@@ -57,7 +57,7 @@ Matrix is valid floats & div is valid int:
 
 Running with div as an overflow float:
     >>> matrix_divided(matrix, float('inf'))
-    [[0.23, 0.45, 0.57], [0.68, 0.79, 0.9]]
+    [[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
 
 Running missing one argument:
     >>> matrix_divided(matrix)
