@@ -4,9 +4,6 @@ This module contains the class: Rectangle.
 """
 
 
-from typing_extensions import Type
-
-
 class Rectangle:
     """
     This class defines a Rectangle object based on width & height.
