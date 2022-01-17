@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """
-Module 0-add_integer
 This module contains the function add_integer.
 """
 
