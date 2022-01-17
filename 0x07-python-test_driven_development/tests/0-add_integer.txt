@@ -57,3 +57,13 @@ Adding a positive float and a negative integer:
 Adding a negative float and a positive integer:
     >>> add_integer(-25.5, 75)
     50
+
+Adding an overflow float:
+    >>> add_integer(float('inf'), 15)
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+Adding a NaN float:
+    >>> add_integer(float("nan"), 15)
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
