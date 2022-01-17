@@ -13,7 +13,6 @@ Size is integer above 0:
 
 Size is integer equal to 0:
     >>> print_square(0)
-    <BLANKLINE>
 
 Size is integer less than 0:
     >>> print_square(-1)
