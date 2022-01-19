@@ -23,3 +23,30 @@ Correct answers for valid inputs.
     Two matrices of different sizes. (with floats):
     >>> matrix_mul([[1.2, 3.4], [4.5, 5.6], [6.7, 7.8]], [[1.2, 3.4, 4.5], [5.6, 6.7, 7.8]])
     [[20.48, 26.86, 31.919999999999998], [36.76, 52.81999999999999, 63.93], [51.72, 75.03999999999999, 90.99]]
+
+Incorrect inputs.
+-----------------
+    m_a is empty matrix:
+    >>> matrix_mul([[]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+    ValueError: m_a can't be empty
+
+    m_b is empty matrix:
+    >>> matrix_mul([[1, 2], [3, 4]], [[]])
+    Traceback (most recent call last):
+    ValueError: m_b can't be empty
+
+    m_a has non-int/float item:
+    >>> matrix_mul([[5, "6"], [7, 8]], [[5, 6], [7, 8]])
+    Traceback (most recent call last):
+    TypeError: m_a should contain only integers or floats
+
+    m_b has non-int/float item:
+    >>> matrix_mul([[5, 6], [7, 8]], [[5, "6"], [7, 8]])
+    Traceback (most recent call last):
+    TypeError: m_b should contain only integers or floats
+
+    Matrices are of incorrect sizes:
+    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
+    Traceback (most recent call last):
+    ValueError: m_a and m_b can't be multiplied

@@ -21,9 +21,9 @@ def matrix_mul(m_a, m_b):
     if not all(isinstance(x, list) for x in m_b):
         raise TypeError("m_b must be a list of lists")
 
-    if not m_a:
+    if not m_a or not m_a[0]:
         raise ValueError("m_a can't be empty")
-    if not m_b:
+    if not m_b or not m_b[0]:
         raise ValueError("m_b can't be empty")
 
     prev_len = len(m_a[0])
@@ -40,7 +40,7 @@ same size")
             raise TypeError("each row of m_b must be of the \
 same size")
 
-    if len(m_a) != len(m_b[0]):
+    if (len(m_a) != 0 and len(m_b) != 0) and (len(m_a) != len(m_b[0])):
         raise ValueError("m_a and m_b can't be multiplied")
 
     result = []
@@ -51,11 +51,11 @@ same size")
             row, res = 0, 0
             for y in range(len(m_a[0])):
                 if not isinstance(m_a[x][y], (int, float)):
-                    raise TypeError("m_a should contain \
-only integers or floats")
+                    raise TypeError("m_a should contain only \
+integers or floats")
                 if not isinstance(m_b[row][col], (int, float)):
-                    raise TypError("m_b should contain \
-only integers or floats")
+                    raise TypeError("m_b should contain only \
+integers or floats")
                 res += m_a[x][y] * m_b[row][col]
                 if row == len(m_b) - 1:
                     row_result.append(res)
