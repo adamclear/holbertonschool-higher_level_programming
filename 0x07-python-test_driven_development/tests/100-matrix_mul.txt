@@ -47,6 +47,6 @@ Incorrect inputs.
     TypeError: m_b should contain only integers or floats
 
     Matrices are of incorrect sizes:
-    >>> matrix_mul([[1, 2], [3, 4]], [[1, 2, 3], [4, 5, 6]])
+    >>> matrix_mul([[1, 2, 3], [3, 4, 5]], [[1, 2], [3, 4]])
     Traceback (most recent call last):
     ValueError: m_a and m_b can't be multiplied
