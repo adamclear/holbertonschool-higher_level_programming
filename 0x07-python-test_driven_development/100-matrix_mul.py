@@ -50,10 +50,10 @@ same size")
         while col != len(m_b[0]):
             row, res = 0, 0
             for y in range(len(m_a[0])):
-                if type(m_a[x][y]) is not int and type(m_a[x][y]) is not float:
+                if not isinstance(m_a[x][y], (int, float)):
                     raise TypeError("m_a should contain \
 only integers or floats")
-                if type(m_b[row][col]) is not int and type(m_b[row][col]) is not float:
+                if not isinstance(m_b[row][col], (int, float)):
                     raise TypError("m_b should contain \
 only integers or floats")
                 res += m_a[x][y] * m_b[row][col]
