@@ -13,10 +13,10 @@ class Rectangle(BaseGeometry):
     not create the object.
     """
     def __init__(self, width, height):
-        if self.integer_validator("width", width):
-            self.__width = width
-        if self.integer_validator("height", height):
-            self.__height = height
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
 
     def area(self):
         """
@@ -29,4 +29,4 @@ class Rectangle(BaseGeometry):
         This method provides the string width and height of
         the object.
         """
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
