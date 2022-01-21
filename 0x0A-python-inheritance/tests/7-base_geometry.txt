@@ -58,6 +58,18 @@ Testing base_geometry.integer_validator:
     Traceback (most recent call last):
     TypeError: Boolean must be an integer
 
+    >>> base_geometry.integer_validator("Float", 1.2)
+    Traceback (most recent call last):
+    TypeError: Float must be an integer
+
+    >>> base_geometry.integer_validator("NaN", float('nan'))
+    Traceback (most recent call last):
+    TypeError: NaN must be an integer
+
+    >>> base_geometry.integer_validator("Inf", float('inf'))
+    Traceback (most recent call last):
+    TypeError: Inf must be an integer
+
     # value is 0 #
     >>> base_geometry.integer_validator("Age", 0)
     Traceback (most recent call last):
