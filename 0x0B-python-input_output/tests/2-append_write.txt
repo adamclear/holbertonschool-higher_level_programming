@@ -1,0 +1,30 @@
+====================================
+Unit test for file 2-append_write.py
+====================================
+
+Importing module
+================
+    >>> append_write = __import__('2-append_write').append_write
+
+Checking for docstrings
+=======================
+    - module -
+    >>> doc = __import__("2-append_write").__doc__
+    >>> len(doc) > 1
+    True
+
+    - method -
+    >>> doc = __import__("2-append_write").append_write.__doc__
+    >>> len(doc) > 1
+    True
+
+Testing append_write
+====================
+    ||| using properly |||
+    - file does not exist -
+    >>> append_write("2-test_append", "testing")
+    7
+
+    - file does exist -
+    >>> append_write("2-test_append", "File was created! Now I'm up in here!")
+    37

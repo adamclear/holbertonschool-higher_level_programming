@@ -23,6 +23,8 @@ Testing write_file
     ||| using properly |||
     - file doesn't exist -
     >>> write_file("1-test_write", "testing")
+    7
 
     - file exists -
     >>> write_file("1-test_write", "I'm in yo' file! Writin' stuff!")
+    31
