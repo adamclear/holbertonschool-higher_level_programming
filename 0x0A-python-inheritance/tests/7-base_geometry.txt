@@ -16,6 +16,10 @@ Check for module & class docstring:
     >>> len(doc) > 1
     True
 
+    >>> doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+    >>> len(doc) > 1
+    True
+
 Creation of BaseGeometry object:
 ================================
     >>> base_geometry = BaseGeometry()
