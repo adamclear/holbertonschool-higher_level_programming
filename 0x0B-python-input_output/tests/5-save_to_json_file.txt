@@ -1,0 +1,36 @@
+=========================================
+Unit test for file 5-save_to_json_file.py
+=========================================
+
+Importing module
+================
+    >>> save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+
+Checking for docstrings
+=======================
+    - module -
+    >>> doc = __import__("5-save_to_json_file").__doc__
+    >>> len(doc) > 1
+    True
+
+    - method -
+    >>> doc = __import__("5-save_to_json_file").__doc__
+    >>> len(doc) > 1
+    True
+
+Testing save_to_json_file
+=========================
+    ||| using properly |||
+    - setting up list and dict -
+    >>> my_list = [1, 2, 3]
+    >>> my_dict = {'id': 12, 'name': "John", 'is_active': True}
+
+    - setting up file names -
+    >>> filename1 = "my_list.json"
+    >>> filename2 = "my_dict.json"
+
+    - passing filename1 and my_list -
+    >>> save_to_json_file(my_list, filename1)
+
+    - passing filename2 and my_dict -
+    >>> save_to_json_file(my_dict, filename2)
