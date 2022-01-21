@@ -28,7 +28,7 @@ Testing base_geometry.area():
     Exception: area() is not implemented
 
     ||| used improperly |||
-    # passing arguments #
+    - passing arguments -
     >>> base_geometry.area(12)
     Traceback (most recent call last):
     TypeError: area() takes 1 positional argument but 2 were given
@@ -41,7 +41,7 @@ Testing base_geometry.integer_validator:
     >>> base_geometry.integer_validator("Int", 100)
 
     ||| used improperly |||
-    # value is not int #
+    - value is not int -
     >>> base_geometry.integer_validator("String", "twelve")
     Traceback (most recent call last):
     TypeError: String must be an integer
@@ -70,27 +70,27 @@ Testing base_geometry.integer_validator:
     Traceback (most recent call last):
     TypeError: Inf must be an integer
 
-    # value is 0 #
+    - value is 0 -
     >>> base_geometry.integer_validator("Age", 0)
     Traceback (most recent call last):
     ValueError: Age must be greater than 0
 
-    # value is less < 0 #
+    - value is less < 0 -
     >>> base_geometry.integer_validator("Age", -2)
     Traceback (most recent call last):
     ValueError: Age must be greater than 0
 
-    # only 1 argument passed #
+    - only 1 argument passed -
     >>> base_geometry.integer_validator("Age")
     Traceback (most recent call last):
     TypeError: integer_validator() missing 1 required positional argument: 'value'
 
-    # no arguments passed #
+    - no arguments passed -
     >>> base_geometry.integer_validator()
     Traceback (most recent call last):
     TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
-    # more than 2 arguments #
+    - more than 2 arguments -
     >>> base_geometry.integer_validator("Age", 12, 12)
     Traceback (most recent call last):
     ...
