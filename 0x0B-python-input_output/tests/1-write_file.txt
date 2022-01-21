@@ -22,7 +22,7 @@ Testing write_file
 ==================
     ||| using properly |||
     - file doesn't exist -
-    >>> write_file("1-test_read", "testing")
+    >>> write_file("1-test_write", "testing")
 
     - file exists -
-    >>> write_file("1-test_read", "I'm in yo' file! Writin' stuff!")
+    >>> write_file("1-test_write", "I'm in yo' file! Writin' stuff!")
