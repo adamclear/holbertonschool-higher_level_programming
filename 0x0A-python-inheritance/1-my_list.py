@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module contains the class: MyList. 
+This module contains the class: MyList.
 MyList inherits from superclass: list.
 """
 
