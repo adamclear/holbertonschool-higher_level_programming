@@ -1,0 +1,30 @@
+===========================================
+Unit test for file 6-load_from_json_file.py
+===========================================
+
+Importing module
+================
+    >>> load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+
+Checking for docstrings
+=======================
+    - module -
+    >>> doc = __import__("6-load_from_json_file").__doc__
+    >>> len(doc) > 1
+    True
+
+    - method -
+    >>> doc = __import__("6-load_from_json_file").__doc__
+    >>> len(doc) > 1
+    True
+
+Testing load_from_json_file
+===========================
+    ||| using properly |||
+    - passing my_dict.json -
+    >>> load_from_json_file("my_dict.json")
+    {u'is_active': True, u'id': 12, u'name': u'John'}
+
+    - passing my_list.json -
+    >>> load_from_json_file("my_list.json")
+    [1, 2, 3]
