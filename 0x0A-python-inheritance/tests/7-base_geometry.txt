@@ -16,10 +16,6 @@ Check for module & class docstring:
     >>> len(doc) > 1
     True
 
-    >>> doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
-    >>> len(doc) > 1
-    True
-
 Creation of BaseGeometry object:
 ================================
     >>> base_geometry = BaseGeometry()
@@ -73,6 +69,14 @@ Testing base_geometry.integer_validator:
     >>> base_geometry.integer_validator("Inf", float('inf'))
     Traceback (most recent call last):
     TypeError: Inf must be an integer
+
+    >>> base_geometry.integer_validator("Age", {3, 4})
+    Traceback (most recent call last):
+    TypeError: Age must be an integer
+
+    >>> base_geometry.integer_validator("Age", None)
+    Traceback (most recent call last):
+    TypeError: Age must be an integer
 
     - value is 0 -
     >>> base_geometry.integer_validator("Age", 0)
