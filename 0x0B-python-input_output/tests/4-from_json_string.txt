@@ -1,0 +1,30 @@
+========================================
+Unit test for file 4-from_json_string.py
+========================================
+
+Importing module
+================
+    >>> from_json_string = __import__('4-from_json_string').from_json_string
+
+Checking for docstrings
+=======================
+    - module -
+    >>> doc = __import__("4-from_json_string").__doc__
+    >>> len(doc) > 1
+    True
+
+    - method -
+    >>> doc = __import__("4-from_json_string").from_json_string.__doc__
+    >>> len(doc) > 1
+    True
+
+Testing from_json_string
+========================
+    ||| using properly |||
+    - passed a json list -
+    >>> from_json_string("[1, 2, 3]")
+    [1, 2, 3]
+
+    - passed a json string -
+    >>> from_json_string('"This is a string"')
+    u'This is a string'
