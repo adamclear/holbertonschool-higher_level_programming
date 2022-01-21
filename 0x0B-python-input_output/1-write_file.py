@@ -13,3 +13,4 @@ def write_file(filename="", text=""):
     length = len(text)
     with open(filename, "w") as x:
         x.write(text)
+    return length
