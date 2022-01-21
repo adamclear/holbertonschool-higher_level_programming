@@ -28,7 +28,7 @@ Testing base_geometry.area():
     Exception: area() is not implemented
 
     ||| used improperly |||
-    >>> base_geometry.area(arg)
+    >>> base_geometry.area(12)
     Traceback (most recent call last):
     TypeError: area() takes 1 positional argument but 2 were given
 
@@ -56,7 +56,7 @@ Testing base_geometry.integer_validator:
     # only 1 argument passed #
     >>> base_geometry.integer_validator("Age")
     Traceback (most recent call last):
-    TypeError: integer_validator() missing 1 required postional argument: 'value'
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
     # no arguments passed #
     >>> base_geometry.integer_validator()
@@ -67,4 +67,4 @@ Testing base_geometry.integer_validator:
     >>> base_geometry.integer_validator("Age", 12, 12)
     Traceback (most recent call last):
     ...
-	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
