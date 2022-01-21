@@ -28,6 +28,7 @@ Testing base_geometry.area():
     Exception: area() is not implemented
 
     ||| used improperly |||
+    # passing arguments #
     >>> base_geometry.area(12)
     Traceback (most recent call last):
     TypeError: area() takes 1 positional argument but 2 were given
@@ -36,12 +37,26 @@ Testing base_geometry.integer_validator:
 ========================================
     ||| used properly |||
     >>> base_geometry.integer_validator("Age", 12)
+    >>> base_geometry.integer_validator(12, 12)
+    >>> base_geometry.integer_validator("Int", 100)
 
     ||| used improperly |||
     # value is not int #
-    >>> base_geometry.integer_validator("Age", "twelve")
+    >>> base_geometry.integer_validator("String", "twelve")
     Traceback (most recent call last):
-    TypeError: Age must be an integer
+    TypeError: String must be an integer
+
+    >>> base_geometry.integer_validator("List", [1, 2, 3])
+    Traceback (most recent call last):
+    TypeError: List must be an integer
+
+    >>> base_geometry.integer_validator("Tuple", (1, 2))
+    Traceback (most recent call last):
+    TypeError: Tuple must be an integer
+
+    >>> base_geometry.integer_validator("Boolean", True)
+    Traceback (most recent call last):
+    TypeError: Boolean must be an integer
 
     # value is 0 #
     >>> base_geometry.integer_validator("Age", 0)
