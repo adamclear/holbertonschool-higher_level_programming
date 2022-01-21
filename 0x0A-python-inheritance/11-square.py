@@ -28,4 +28,4 @@ class Square(Rectangle):
         This method provides the string width and height
         of the object.
         """
-        return "[Square] <width>/<height>"
+        return "[Square] {:d}/{:d}".format(self.__width, self.__height)"
