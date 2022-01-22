@@ -11,10 +11,10 @@ def pascal_triangle(n):
     """
     if n <= 0:
         return []
-    x = 1
+    x = 0
     y = 0
-    prev_row = [1]
-    pascal_matrix = [[1]]
+    prev_row = []
+    pascal_matrix = []
     while x < n:
         new_row = []
         y = 0
