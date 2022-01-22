@@ -34,16 +34,23 @@ Testing to_json
     - setting up a student -
     >>> my_student = Student("Adam", "Clear", 39)
 
-    - using to_json on my_student -
+    - using to_json on my_student (no attrs)-
     >>> my_json_student = my_student.to_json()
 
     - printing my_json_student with no attrs -
-    >>> print(my_json_student())
+    >>> print(my_json_student)
     {'last_name': 'Clear', 'age': 39, 'first_name': 'Adam'}
-    
-    - printing my_json_student with two attrs -
-    >>> print(my_json_student(['first_name', 'age']))
-    
 
-    - printing my_json_student with one attr -
-    >>> print(my_json_student(['last_name']))
+    - using to_json on my_student (2 attrs) -
+    >>> my_json_student = my_student.to_json(['first_name', 'age'])
+
+    - printing my_json_student with 2 attrs -
+    >>> print(my_json_student)
+    {'first_name': 'Adam', 'age': 39}
+
+    - using to_json on my_student (1 attrs) -
+    >>> my_json_student = my_student.to_json(['last_name'])
+
+    - printing my_json_student with 1 attrs -
+    >>> print(my_json_student)
+    {'last_name': 'Clear'}
