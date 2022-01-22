@@ -36,6 +36,4 @@ class Student:
         This method replaces all attributes of itself with info
         from a dictionary.
         """
-        self.first_name = json["first_name"]
-        self.last_name = json["last__name"]
-        self.age = json["age"]
+        self.__dict__.update(json)
