@@ -1,0 +1,68 @@
+===============================
+Unit test for file 11-student.py
+===============================
+
+Importing module
+================
+    >>> Student = __import__('11-student').Student
+
+Checking for docstrings
+=======================
+    - module -
+    >>> doc = __import__('11-student').__doc__
+    >>> len(doc) > 1
+    True
+
+    - class -
+    >>> doc = __import__('11-student').Student.__doc__
+    >>> len(doc) > 1
+    True
+
+    - __init__ -
+    >>> doc = __import__('11-student').Student.__init__.__doc__
+    >>> len(doc) > 1
+    True
+
+    - to_json -
+    >>> doc = __import__('11-student').Student.to_json.__doc__
+    >>> len(doc) > 1
+    True
+
+Testing to_json
+===============
+    ||| using properly |||
+    - setting up a student -
+    >>> my_student = Student("Adam", "Clear", 39)
+
+    - using to_json on my_student (no attrs)-
+    >>> my_json_student = my_student.to_json()
+
+    - printing my_json_student with no attrs -
+    >>> print(my_json_student)
+    {'last_name': 'Clear', 'age': 39, 'first_name': 'Adam'}
+
+    - using to_json on my_student (2 attrs) -
+    >>> my_json_student = my_student.to_json(['first_name', 'age'])
+
+    - printing my_json_student with 2 attrs -
+    >>> print(my_json_student)
+    {'first_name': 'Adam', 'age': 39}
+
+    - using to_json on my_student (1 attrs) -
+    >>> my_json_student = my_student.to_json(['last_name'])
+
+    - printing my_json_student with 1 attrs -
+    >>> print(my_json_student)
+    {'last_name': 'Clear'}
+
+Testing reload_from_json
+========================
+    - setting up json -
+    >>> json = {'first_name': "Mada", 'last_name: "Realc", 'age': 93}
+
+    - setting up new student with reload_from_json -
+    >>> my_reloaded_student = my_student.reload_from_json(json)
+
+    - printing my_reloaded_student -
+    >>> print(my_reloaded_student)
+    {'last_name': 'Realc', 'first_name': 'Mada', 'age': 93}
