@@ -23,7 +23,7 @@ def pascal_triangle(n):
             except Exception:
                 ldigit = 0
             try:
-                rdigit = prev_row[y +  1]
+                rdigit = prev_row[y + 1]
             except Exception:
                 rdigit = 0
             digit = ldigit + rdigit
