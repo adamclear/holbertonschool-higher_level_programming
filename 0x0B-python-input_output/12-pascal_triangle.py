@@ -12,20 +12,21 @@ def pascal_triangle(n):
     if n <= 0:
         return []
     x = 1
-    y = 1
+    y = 0
     prev_row = [1]
     pascal_matrix = [[1]]
     while x < n:
         new_row = []
+        y = 0
         while y < len(prev_row) + 1:
-            try:
-                ldigit = prev_row[y - 1]
-            except Exception:
+            if y == 0:
                 ldigit = 0
-            try:
-                rdigit = prev_row[y + 1]
-            except Exception:
+            else:
+                ldigit = prev_row[y - 1]
+            if y == len(prev_row):
                 rdigit = 0
+            else:
+                rdigit = prev_row[y]
             digit = ldigit + rdigit
             if digit == 0:
                 digit = 1
