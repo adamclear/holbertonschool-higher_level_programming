@@ -1,0 +1,1 @@
+This lesson is a continuation of all the Python concepts we've learned up to this point.
