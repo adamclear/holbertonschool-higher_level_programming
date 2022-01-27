@@ -143,7 +143,7 @@ class Rectangle(Base):
                            self.__y, self.__width,
                            self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         This method assigns 'args' to each attribute. In order;
         id, width, height, x, and y.
@@ -154,3 +154,5 @@ class Rectangle(Base):
             for arg in args:
                 setattr(self, attrs[attrnum], arg)
                 attrnum += 1
+        for key, value in kwargs.items():
+            setattr(self, key, value)
