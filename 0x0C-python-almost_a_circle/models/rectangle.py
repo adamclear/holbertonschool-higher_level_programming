@@ -48,7 +48,7 @@ class Rectangle(Base):
         Getter for Rectangle width.
         """
         return self.__width
-    
+
     @property
     def height(self):
         """
@@ -69,7 +69,7 @@ class Rectangle(Base):
         Getter for Rectangle y.
         """
         return self.__y
-    
+
     @width.setter
     def width(self, value):
         """
@@ -128,3 +128,13 @@ class Rectangle(Base):
             for col in range(self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """
+        This method returns a string representation of the
+        Rectangle object.
+        """
+        return "[Rectangle] \
+({}) {}/{} - {}/{}".format(self.id, self.__x,
+                           self.__y, self.__width,
+                           self.__height)
