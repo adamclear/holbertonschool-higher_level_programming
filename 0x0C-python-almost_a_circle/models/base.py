@@ -56,3 +56,13 @@ class Base:
         if not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This method returns an object with the attributes set by
+        kwargs, 'dictionary'.
+        """
+        new_obj = cls(1, 1)
+        new_obj.update(**dictionary)
+        return new_obj
