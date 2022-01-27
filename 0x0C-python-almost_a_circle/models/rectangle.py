@@ -142,3 +142,15 @@ class Rectangle(Base):
 ({}) {}/{} - {}/{}".format(self.id, self.__x,
                            self.__y, self.__width,
                            self.__height)
+
+    def update(self, *args):
+        """
+        This method assigns 'args' to each attribute. In order;
+        id, width, height, x, and y.
+        """
+        attrnum = 0
+        attrs = ['id', 'width', 'height', 'x', 'y']
+        if args:
+            for arg in args:
+                setattr(self, attrs[attrnum], arg)
+                attrnum += 1
