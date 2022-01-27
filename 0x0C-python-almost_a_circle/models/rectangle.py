@@ -124,7 +124,11 @@ class Rectangle(Base):
         """
         This prints the Rectangle to stdout using the character '#'.
         """
+        for lines in range(self.__y):
+            print()
         for row in range(self.__height):
+            for spot in range(self.__x):
+                print(" ", end="")
             for col in range(self.__width):
                 print("#", end="")
             print()
