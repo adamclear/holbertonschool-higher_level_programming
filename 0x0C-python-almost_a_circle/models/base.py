@@ -3,6 +3,7 @@
 This module contains the class: Base.
 """
 import json
+from os.path import exists
 
 
 class Base:
@@ -41,12 +42,12 @@ class Base:
         object, 'list_objs', to a file.
         """
         filename = cls.__name__ + ".json"
-        newstring = []
+        newlist = []
         if list_objs:
             for item in list_objs:
-                newstring.append(cls.to_dictionary(item))
+                newlist.append(cls.to_dictionary(item))
         with open(filename, "w") as file:
-            file.write(cls.to_json_string(newstring))
+            file.write(cls.to_json_string(newlist))
 
     @staticmethod
     def from_json_string(json_string):
@@ -66,3 +67,19 @@ class Base:
         new_obj = cls(1, 1)
         new_obj.update(**dictionary)
         return new_obj
+
+    def load_from_file(cls):
+        """
+        This method returns a list of instances of a particular
+        class, 'cls'.
+        """
+        filename = cls.__name__ + ".json"
+        newlist = []
+        if not exists(filename):
+            return newlist
+        with open(filename, "r") as file:
+            newlist = json.load(file)
+        newobj = []
+        for dict in newlist:
+            newobj.append(cls.create(**dict))
+        return newobj
