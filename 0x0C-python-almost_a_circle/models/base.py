@@ -47,3 +47,12 @@ class Base:
                 newstring.append(cls.to_dictionary(item))
         with open(filename, "w") as file:
             file.write(cls.to_json_string(newstring))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        This method returns the list of the JSON string, 'json_string'.
+        """
+        if not json_string:
+            return []
+        return json.loads(json_string)
