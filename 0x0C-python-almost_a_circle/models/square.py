@@ -43,3 +43,18 @@ class Square(Rectangle):
         """
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x,
                                                  self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """
+        This method assigns 'args' to each attribute. In order;
+        id, width, height, x, and y. Or, if there is no 'args',
+        then it will use 'kwargs'.
+        """
+        attrnum = 0
+        attrs = ['id', 'size', 'x', 'y']
+        if args:
+            for arg in args:
+                setattr(self, attrs[attrnum], arg)
+                attrnum += 1
+        for key, value in kwargs.items():
+            setattr(self, key, value)

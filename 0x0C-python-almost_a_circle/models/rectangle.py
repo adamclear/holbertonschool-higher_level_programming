@@ -146,7 +146,8 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """
         This method assigns 'args' to each attribute. In order;
-        id, width, height, x, and y.
+        id, width, height, x, and y. Or, if there is no 'args',
+        then it will use 'kwargs'.
         """
         attrnum = 0
         attrs = ['id', 'width', 'height', 'x', 'y']
