@@ -75,7 +75,7 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         if not os.path.exists(filename):
-            return newlist
+            return []
         with open(filename, "r") as file:
             newlist = cls.from_json_string(file.read())
         newobj = []
