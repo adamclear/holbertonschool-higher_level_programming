@@ -71,6 +71,7 @@ class Base:
         new_obj.update(**dictionary)
         return new_obj
 
+    @classmethod
     def load_from_file(cls):
         """
         This method returns a list of instances of a particular
