@@ -61,5 +61,15 @@ class TestBaseClass(unittest.TestCase):
         base3 = Base()
         self.assertEqual(base3.id, 2)
 
+    def test_to_json_string(self):
+        """
+        Tests the to_json_string method.
+        """
+        dict1 = {'width': 2, 'height': 2, 'x': 1, 'y': 1, 'id': 50}
+        dict2 = {'width': 3, 'height': 3, 'x': 2, 'y': 2, 'id': 100}
+        json_string = Base.to_json_string([dict1, dict2])
+        self.assertTrue(type(json_string) is str)
+
+
 if __name__ == "__main__":
     unittest.main()
