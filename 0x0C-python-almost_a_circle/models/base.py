@@ -78,7 +78,7 @@ class Base:
         if not exists(filename):
             return newlist
         with open(filename, "r") as file:
-            newlist = json.load(file)
+            newlist = cls.from_json_string(file.read())
         newobj = []
         for dict in newlist:
             newobj.append(cls.create(**dict))
