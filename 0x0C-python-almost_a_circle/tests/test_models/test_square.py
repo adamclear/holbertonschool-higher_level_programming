@@ -59,6 +59,23 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.size, 10)
         self.assertEqual(Square1.x, 1)
         self.assertEqual(Square1.y, 2)
+        # Bad size
+        with self.assertRaises(TypeError):
+            Square2 = Square("ten", 1, 2, 5)
+        with self.assertRaises(ValueError):
+            Square2 = Square(-10, 1, 2, 5)
+        with self.assertRaises(ValueError):
+            Square2 = Square(0, 1, 2, 5)
+        # Bad x
+        with self.assertRaises(TypeError):
+            Square2 = Square(10, "one", 2, 5)
+        with self.assertRaises(ValueError):
+            Square2 = Square(10, -1, 2, 5)
+        # Bad y
+        with self.assertRaises(TypeError):
+            Square2 = Square(10, 1, "two", 5)
+        with self.assertRaises(ValueError):
+            Square2 = Square(10, 1, -2, 5)
 
 if __name__ == "__main__":
     unittest.main()
