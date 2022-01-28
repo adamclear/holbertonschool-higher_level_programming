@@ -5,6 +5,8 @@ Unittest for Base class.
 import unittest
 import json
 from models.base import Base
+from models.rectangle import Rectangle
+from models.square import Square
 import pep8
 import inspect
 
@@ -14,7 +16,7 @@ class TestBaseClass(unittest.TestCase):
     The Base class test class.
     """
     @classmethod
-    def setUpClass(cls) -> None:
+    def setUpClass(cls):
         """
         Setup method.
         """
