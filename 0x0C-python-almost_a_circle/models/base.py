@@ -80,7 +80,7 @@ class Base:
         if not os.path.exists(filename):
             return []
         with open(filename, "r") as file:
-            newlist = cls.from_json_string(file.read())
+            newlist = json.load(file)
         newobj = []
         for dict in newlist:
             newobj.append(cls.create(**dict))
