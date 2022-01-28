@@ -74,7 +74,6 @@ class Base:
         class, 'cls'.
         """
         filename = cls.__name__ + ".json"
-        newlist = []
         if not os.path.exists(filename):
             return newlist
         with open(filename, "r") as file:
