@@ -3,7 +3,7 @@
 This module contains the class: Base.
 """
 import json
-from os.path import exists
+import os
 
 
 class Base:
@@ -75,7 +75,7 @@ class Base:
         """
         filename = cls.__name__ + ".json"
         newlist = []
-        if not exists(filename):
+        if not os.path.exists(filename):
             return newlist
         with open(filename, "r") as file:
             newlist = cls.from_json_string(file.read())
