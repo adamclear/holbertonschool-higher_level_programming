@@ -11,7 +11,7 @@ import pep8
 import inspect
 
 
-class TestRectangleClass(unittest.TestCase):
+class TestSquareClass(unittest.TestCase):
     """
     The Rectangle class test class.
     """
@@ -54,10 +54,9 @@ class TestRectangleClass(unittest.TestCase):
         """
         Testing the init method.
         """
-        Square1 = Square(10, 12, 1, 2, 5)
+        Square1 = Square(10, 1, 2, 5)
         self.assertEqual(Square1.id, 5)
-        self.assertEqual(Square1.width, 10)
-        self.assertEqual(Square1.height, 12)
+        self.assertEqual(Square1.size, 10)
         self.assertEqual(Square1.x, 1)
         self.assertEqual(Square1.y, 2)
 
