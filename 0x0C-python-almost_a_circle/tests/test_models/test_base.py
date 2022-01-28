@@ -47,7 +47,7 @@ class TestBaseClass(unittest.TestCase):
         """
         Testing method docstrings.
         """
-        for methods, x in self.base_methods:
+        for methods in self.base_methods:
             self.assertTrue(len(methods.__doc__) >= 1)
 
     def test_init(self):
