@@ -48,7 +48,7 @@ class TestBaseClass(unittest.TestCase):
         Testing method docstrings.
         """
         for methods, x in self.base_methods:
-            self.assertTrue(len(methods[x].__doc__) >= 1)
+            self.assertTrue(len(methods.__doc__) >= 1)
 
     def test_init(self):
         """
@@ -57,9 +57,9 @@ class TestBaseClass(unittest.TestCase):
         base1 = Base()
         self.assertEqual(base1.id, 1)
         base2 = Base(100)
-        self.assertEqual(base2, 100)
+        self.assertEqual(base2.id, 100)
         base3 = Base()
-        self.assertEqual(base3, 2)
+        self.assertEqual(base3.id, 2)
 
 if __name__ == "__main__":
     unittest.main()
