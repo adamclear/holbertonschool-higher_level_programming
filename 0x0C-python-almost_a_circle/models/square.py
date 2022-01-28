@@ -60,5 +60,9 @@ class Square(Rectangle):
             setattr(self, key, value)
 
     def to_dictionary(self):
+        """
+        This method returns a dictionary of the attributes of
+        the Square.
+        """
         return {'id': self.id, 'size': self.width,
                 'x': self.x, 'y': self.y}
