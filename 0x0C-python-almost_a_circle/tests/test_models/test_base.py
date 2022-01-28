@@ -69,7 +69,8 @@ class TestBaseClass(unittest.TestCase):
         dict2 = {'width': 3, 'height': 3, 'x': 2, 'y': 2, 'id': 100}
         json_string = Base.to_json_string([dict1, dict2])
         self.assertTrue(type(json_string) is str)
-
+        json_dict = json.loads(json_string)
+        self.assertEqual(json_dict, [dict1, dict2])
 
 if __name__ == "__main__":
     unittest.main()
