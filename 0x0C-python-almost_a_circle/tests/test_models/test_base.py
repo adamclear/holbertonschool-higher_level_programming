@@ -83,7 +83,8 @@ class TestBaseClass(unittest.TestCase):
         """
         Tests the save_to_file method.
         """
-        Rectangle1 = Rectangle(10, 10, 1, 2, 5)
+        Rectangle1 = Rectangle(10, 12, 1, 2, 5)
+        Rectangle2 = Rectangle(20, 20, 2, 3, 10)
         Rectangle.save_to_file([Rectangle1])
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 54)
@@ -94,6 +95,27 @@ class TestBaseClass(unittest.TestCase):
         # No arg
         with self.assertRaises(TypeError):
             Rectangle.save_to_file()
+        # Too many args
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file([Rectangle1], [Rectangle2])
+
+    def test_from_json_string(self):
+        """
+        Testing the from_json_string method.
+        """
+        json_string1 = '[{"id": 5, "width": 10, "height": 12, "x": 1, "y": 2}]'
+        json_list1 = Base.from_json_string(json_string1)
+        self.assertTrue(type(json_list1) is list)
+        # Empty string
+        json_string2 = ""
+        json_list2 = Base.from_json_string(json_string2)
+        self.assertTrue(type(json_list2) is list)
+        # No arg
+        with self.assertRaises(TypeError):
+            json_list3 = Base.from_json_string()
+        # Too many args
+        with self.assertRaises(TypeError):
+            json_list3 = Base.from_json_string(json_string1, json_string2)
 
 if __name__ == "__main__":
     unittest.main()
