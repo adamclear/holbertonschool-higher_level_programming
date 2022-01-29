@@ -98,6 +98,8 @@ class TestBaseClass(unittest.TestCase):
         # Too many args
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([Rectangle1], [Rectangle2])
+        # Setup for load_from_file test
+        Rectangle.save_to_file([Rectangle1])
 
     def test_from_json_string(self):
         """
@@ -131,6 +133,21 @@ class TestBaseClass(unittest.TestCase):
         # Too many args
         with self.assertRaises(TypeError):
             Square_create2 = Square.create(square_dict1, square_dict2)
+
+    def test_load_from_file(self):
+        """
+        Testing the load_from_file method.
+        """
+        Rectangle_list = Rectangle.load_from_file()
+        self.assertTrue(type(Rectangle_list) is list)
+        self.assertTrue(len(Rectangle_list) == 1)
+        # No file
+        Square_list = Square.load_from_file()
+        self.assertTrue(type(Square_list) is list)
+        self.assertTrue(len(Square_list) == 0)
+        # Passing an arg
+        with self.assertRaises(TypeError):
+            Oops_list = Rectangle.load_from_file(Rectangle)
 
 if __name__ == "__main__":
     unittest.main()
