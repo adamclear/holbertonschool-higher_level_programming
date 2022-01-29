@@ -41,6 +41,7 @@ class TestSquareClass(unittest.TestCase):
         Testing method docstrings.
         """
         self.assertTrue(len(Square.__init__.__doc__) >= 1)
+        self.assertTrue(len(Square.size.__doc__) >= 1)
         self.assertTrue(len(Square.__str__.__doc__) >= 1)
         self.assertTrue(len(Square.update.__doc__) >= 1)
         self.assertTrue(len(Square.to_dictionary.__doc__) >= 1)
@@ -60,39 +61,39 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square2 = Square()
         # Bad size
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square2 = Square("ten", 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square2 = Square(10.5, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square2 = Square([], 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square2 = Square({}, 1, 2, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square2 = Square(-10, 1, 2, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square2 = Square(0, 1, 2, 5)
         # Bad x
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square2 = Square(10, "one", 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square2 = Square(10, 1.5, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square2 = Square(10, [], 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Square2 = Square(10, {}, 2, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Square2 = Square(10, -1, 2, 5)
         # Bad y
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square2 = Square(10, 1, "two", 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square2 = Square(10, 1, 2.5, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square2 = Square(10, 1, [], 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Square2 = Square(10, 1, {}, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square2 = Square(10, 1, -2, 5)
 
     def test_size_setter(self):
