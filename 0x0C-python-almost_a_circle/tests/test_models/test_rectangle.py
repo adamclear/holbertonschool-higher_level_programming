@@ -63,52 +63,52 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle()
         # Bad width
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle2 = Rectangle(-10, 12, 1, 2, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle2 = Rectangle(0, 12, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle2 = Rectangle("ten", 12, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle2 = Rectangle(10.5, 12, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle2 = Rectangle([], 12, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle2 = Rectangle({}, 12, 1, 2, 5)
         # Bad height
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle2 = Rectangle(10, -12, 1, 2, 5)
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle2 = Rectangle(10, 0, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle2 = Rectangle(10, "twelve", 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle2 = Rectangle(10, 12.5, 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle2 = Rectangle(10, [], 1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle2 = Rectangle(10, {}, 1, 2, 5)
         # Bad x
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Rectangle2 = Rectangle(10, 12, -1, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle2 = Rectangle(10, 12, "one", 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1.5, 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle2 = Rectangle(10, 12, [], 2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle2 = Rectangle(10, 12, {}, 2, 5)
         # Bad y
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle2 = Rectangle(10, 12, 1, -2, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1, "two", 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1, 2.5, 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1, [], 5)
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1, {}, 5)
 
     def test_width_setter(self):
