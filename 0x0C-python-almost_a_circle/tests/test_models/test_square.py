@@ -64,7 +64,6 @@ class TestSquareClass(unittest.TestCase):
             Square2 = Square("ten", 1, 2, 5)
         with self.assertRaises(ValueError):
             Square2 = Square(-10, 1, 2, 5)
-        with self.assertRaises(ValueError):
             Square2 = Square(0, 1, 2, 5)
         # Bad x
         with self.assertRaises(TypeError):
@@ -76,6 +75,21 @@ class TestSquareClass(unittest.TestCase):
             Square2 = Square(10, 1, "two", 5)
         with self.assertRaises(ValueError):
             Square2 = Square(10, 1, -2, 5)
+
+    def test_size_setter(self):
+        """
+        Testing the setter for Square size.
+        """
+        Square1 = Square(10, 1, 2, 5)
+        self.assertEqual(Square1.size, 10)
+        Square1.size = 20
+        self.assertEqual(Square1.size, 20)
+        # Bad values/types
+        with self.assertRaises(TypeError):
+            Square1.size = "twenty"
+        with self.assertRaises(ValueError):
+            Square1.size = -20
+            Square1.size = 0
 
 if __name__ == "__main__":
     unittest.main()
