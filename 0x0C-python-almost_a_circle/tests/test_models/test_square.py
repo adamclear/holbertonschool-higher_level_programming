@@ -105,11 +105,17 @@ class TestSquareClass(unittest.TestCase):
         Square1.size = 20
         self.assertEqual(Square1.size, 20)
         # Bad values/types
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Square1.size = "twenty"
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square1.size = 20.5
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square1.size = []
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Square1.size = {}
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square1.size = -20
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square1.size = 0
 
     def test_update(self):
