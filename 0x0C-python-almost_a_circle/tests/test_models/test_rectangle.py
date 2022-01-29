@@ -47,8 +47,12 @@ class TestRectangleClass(unittest.TestCase):
         """
         Testing method docstrings.
         """
-        for methods in self.base_methods:
-            self.assertTrue(len(methods.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.__init__.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.area.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.display.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.__str__.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.update.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.to_dictionary.__doc__) >= 1)
 
     def test_init(self):
         """

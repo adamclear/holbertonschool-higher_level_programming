@@ -47,8 +47,10 @@ class TestSquareClass(unittest.TestCase):
         """
         Testing method docstrings.
         """
-        for methods in self.base_methods:
-            self.assertTrue(len(methods.__doc__) >= 1)
+        self.assertTrue(len(Square.__init__.__doc__) >= 1)
+        self.assertTrue(len(Square.__str__.__doc__) >= 1)
+        self.assertTrue(len(Square.update.__doc__) >= 1)
+        self.assertTrue(len(Square.to_dictionary.__doc__) >= 1)
 
     def test_init(self):
         """

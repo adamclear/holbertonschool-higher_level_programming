@@ -47,8 +47,12 @@ class TestBaseClass(unittest.TestCase):
         """
         Testing method docstrings.
         """
-        for methods in self.base_methods:
-            self.assertTrue(len(methods.__doc__) >= 1)
+        self.assertTrue(len(Base.__init__.__doc__) >= 1)
+        self.assertTrue(len(Base.to_json_string.__doc__) >= 1)
+        self.assertTrue(len(Base.save_to_file.__doc__) >= 1)
+        self.assertTrue(len(Base.from_json_string.__doc__) >= 1)
+        self.assertTrue(len(Base.create.__doc__) >= 1)
+        self.assertTrue(len(Base.load_from_file.__doc__) >= 1)
 
     def test_init(self):
         """
