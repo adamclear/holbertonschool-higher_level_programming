@@ -91,5 +91,34 @@ class TestSquareClass(unittest.TestCase):
             Square1.size = -20
             Square1.size = 0
 
+    def test_update(self):
+        """
+        Testing the updated method.
+        """
+        Square1 = Square(10, 1, 2, 5)
+        self.assertEqual(Square1.size, 10)
+        # Using args
+        Square1.update(10, 20, 2, 3)
+        self.assertEqual(Square1.id, 10)
+        self.assertEqual(Square1.size, 20)
+        self.assertEqual(Square1.x, 2)
+        self.assertEqual(Square1.y, 3)
+        # Using kwargs
+        Square1.update(size=30, id=20, x=3, y=4)
+        self.assertEqual(Square1.size, 30)
+        self.assertEqual(Square1.id, 20)
+        self.assertEqual(Square1.x, 3)
+        self.assertEqual(Square1.y, 4)
+
+    def test_to_dictionary(self):
+        """
+        Testing the to_dictionary method.
+        """
+        Square1 = Square(10, 1, 2, 5)
+        Square1_dict = Square1.to_dictionary()
+        self.assertTrue(type(Square1_dict) is dict)
+        dict1 = {'id': 5, 'size': 10, 'x': 1, 'y': 2}
+        self.assertEqual(Square1_dict, dict1)
+
 if __name__ == "__main__":
     unittest.main()
