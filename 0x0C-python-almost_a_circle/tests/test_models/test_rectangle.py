@@ -60,6 +60,11 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.height, 12)
         self.assertEqual(Rectangle1.x, 1)
         self.assertEqual(Rectangle1.y, 2)
+        # Bad args
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle(10, 10, 10, 10, 10, 10)
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle()
         # Bad width
         with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(-10, 12, 1, 2, 5)

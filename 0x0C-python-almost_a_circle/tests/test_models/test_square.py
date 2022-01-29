@@ -59,6 +59,11 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.size, 10)
         self.assertEqual(Square1.x, 1)
         self.assertEqual(Square1.y, 2)
+        # Bad args
+        with self.assertRaises(TypeError):
+            Square2 = Square(10, 10, 10, 10, 10)
+        with self.assertRaises(TypeError):
+            Square2 = Square()
         # Bad size
         with self.assertRaises(TypeError):
             Square2 = Square("ten", 1, 2, 5)
