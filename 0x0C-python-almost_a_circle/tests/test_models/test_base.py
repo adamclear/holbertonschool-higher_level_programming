@@ -35,7 +35,7 @@ class TestBaseClass(unittest.TestCase):
         """
         Testing module docstring.
         """
-        self.assertTrue(len(Base.__doc__) >= 1)
+        self.assertTrue(len('base'.__doc__) >= 1)
 
     def test_class_docstring(self):
         """
