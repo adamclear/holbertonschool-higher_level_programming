@@ -13,7 +13,7 @@ import pep8
 class TestBaseClass(unittest.TestCase):
     """
     The Base class test class.
-    """    
+    """
     def test_pep8(self):
         """
         Testing pep8 compliance.
