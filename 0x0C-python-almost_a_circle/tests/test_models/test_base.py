@@ -14,14 +14,7 @@ import inspect
 class TestBaseClass(unittest.TestCase):
     """
     The Base class test class.
-    """
-    @classmethod
-    def setUpClass(cls):
-        """
-        Setup method.
-        """
-        cls.base_methods = inspect.getmembers(Base, inspect.isfunction)
-    
+    """    
     def test_pep8(self):
         """
         Testing pep8 compliance.

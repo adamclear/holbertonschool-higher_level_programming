@@ -15,13 +15,6 @@ class TestSquareClass(unittest.TestCase):
     """
     The Rectangle class test class.
     """
-    @classmethod
-    def setUpClass(cls):
-        """
-        Setup method.
-        """
-        cls.base_methods = inspect.getmembers(Square, inspect.isfunction)
-
     def test_pep8(self):
         """
         Testing pep8 compliance.
