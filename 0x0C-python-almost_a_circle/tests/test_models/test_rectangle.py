@@ -60,6 +60,28 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.height, 12)
         self.assertEqual(Rectangle1.x, 1)
         self.assertEqual(Rectangle1.y, 2)
+        # Bad width
+        with self.assertRaises(ValueError):
+            Rectangle2 = Rectangle(-10, 12, 1, 2, 5)
+            Rectangle2 = Rectangle(0, 12, 1, 2, 5)
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle("ten", 12, 1, 2, 5)
+        # Bad height
+        with self.assertRaises(ValueError):
+            Rectangle2 = Rectangle(10, -12, 1, 2, 5)
+            Rectangle2 = Rectangle(10, 0, 1, 2, 5)
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle(10, "twelve", 1, 2, 5)
+        # Bad x
+        with self.assertRaises(ValueError):
+            Rectangle2 = Rectangle(10, 12, -1, 2, 5)
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle(10, 12, "one", 2, 5)
+        # Bad y
+        with self.assertRaises(ValueError):
+            Rectangle2 = Rectangle(10, 12, 1, -2, 5)
+        with self.assertRaises(TypeError):
+            Rectangle2 = Rectangle(10, 12, 1, "two", 5)
 
 if __name__ == "__main__":
     unittest.main()
