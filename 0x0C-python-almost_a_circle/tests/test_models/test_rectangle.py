@@ -68,36 +68,50 @@ class TestRectangleClass(unittest.TestCase):
         # Bad width
         with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(-10, 12, 1, 2, 5)
+        with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(0, 12, 1, 2, 5)
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle("ten", 12, 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10.5, 12, 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle([], 12, 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle({}, 12, 1, 2, 5)
         # Bad height
         with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(10, -12, 1, 2, 5)
+        with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(10, 0, 1, 2, 5)
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, "twelve", 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12.5, 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, [], 1, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, {}, 1, 2, 5)
         # Bad x
         with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(10, 12, -1, 2, 5)
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, "one", 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, 1.5, 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, [], 2, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, {}, 2, 5)
         # Bad y
         with self.assertRaises(ValueError):
             Rectangle2 = Rectangle(10, 12, 1, -2, 5)
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, 1, "two", 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, 1, 2.5, 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, 1, [], 5)
+        with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 12, 1, {}, 5)
 
     def test_width_setter(self):
@@ -110,6 +124,7 @@ class TestRectangleClass(unittest.TestCase):
         # Bad values/types
         with self.assertRaises(ValueError):
             Rectangle1.width = -20
+        with self.assertRaises(ValueError):
             Rectangle1.width = 0
         with self.assertRaises(TypeError):
             Rectangle1.width = "twenty"
@@ -124,6 +139,7 @@ class TestRectangleClass(unittest.TestCase):
         # Bad values/types
         with self.assertRaises(ValueError):
             Rectangle1.height = -20
+        with self.assertRaises(ValueError):
             Rectangle1.height = 0
         with self.assertRaises(TypeError):
             Rectangle1.height = "twenty"
