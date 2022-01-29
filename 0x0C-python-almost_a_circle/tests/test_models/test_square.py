@@ -27,7 +27,7 @@ class TestSquareClass(unittest.TestCase):
         """
         Testing module docstring.
         """
-        self.assertTrue(len('square'.__doc__) >= 1)
+        self.assertTrue(len(Square.__doc__) >= 1)
 
     def test_class_docstring(self):
         """

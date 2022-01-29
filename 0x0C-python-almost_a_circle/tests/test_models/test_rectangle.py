@@ -27,7 +27,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         Testing module docstring.
         """
-        self.assertTrue(len('rectangle'.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.__doc__) >= 1)
 
     def test_class_docstring(self):
         """
