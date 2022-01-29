@@ -119,12 +119,18 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle1.width = 20
         self.assertEqual(Rectangle1.width, 20)
         # Bad values/types
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle1.width = -20
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Rectangle1.width = 0
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle1.width = "twenty"
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle1.width = 20.5
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle1.width = []
+        with self.assertRaisesRegex(TypeError, "width must be an integer"):
+            Rectangle1.width = {}
 
     def test_height_setter(self):
         """
@@ -134,12 +140,18 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle1.height = 20
         self.assertEqual(Rectangle1.height, 20)
         # Bad values/types
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle1.height = -20
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "height must be > 0"):
             Rectangle1.height = 0
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle1.height = "twenty"
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle1.height = 20.5
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle1.height = []
+        with self.assertRaisesRegex(TypeError, "height must be an integer"):
+            Rectangle1.height = {}
 
     def test_x_setter(self):
         """
