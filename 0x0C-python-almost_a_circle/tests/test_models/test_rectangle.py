@@ -41,6 +41,10 @@ class TestRectangleClass(unittest.TestCase):
         Testing method docstrings.
         """
         self.assertTrue(len(Rectangle.__init__.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.width.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.height.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.x.__doc__) >= 1)
+        self.assertTrue(len(Rectangle.y.__doc__) >= 1)
         self.assertTrue(len(Rectangle.area.__doc__) >= 1)
         self.assertTrue(len(Rectangle.display.__doc__) >= 1)
         self.assertTrue(len(Rectangle.__str__.__doc__) >= 1)
@@ -161,10 +165,16 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle1.x = 20
         self.assertEqual(Rectangle1.x, 20)
         # Bad values/types
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "x must be >= 0"):
             Rectangle1.x = -20
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle1.x = "twenty"
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle1.x = 1.5
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle1.x = []
+        with self.assertRaisesRegex(TypeError, "x must be an integer"):
+            Rectangle1.x = {}
 
     def test_y_setter(self):
         """
@@ -174,10 +184,16 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle1.y = 20
         self.assertEqual(Rectangle1.y, 20)
         # Bad values/types
-        with self.assertRaises(ValueError):
+        with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Rectangle1.y = -20
-        with self.assertRaises(TypeError):
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle1.y = "twenty"
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle1.y = 20.5
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle1.y = []
+        with self.assertRaisesRegex(TypeError, "y must be an integer"):
+            Rectangle1.y = {}
 
     def test_area(self):
         """
