@@ -55,11 +55,11 @@ class TestBaseClass(unittest.TestCase):
         Tests the init method.
         """
         base1 = Base()
-        self.assertEqual(base1.id, 1)
+        self.assertEqual(base1.id, 3)
         base2 = Base(100)
         self.assertEqual(base2.id, 100)
         base3 = Base()
-        self.assertEqual(base3.id, 2)
+        self.assertEqual(base3.id, 4)
 
     def test_to_json_string(self):
         """
@@ -116,6 +116,21 @@ class TestBaseClass(unittest.TestCase):
         # Too many args
         with self.assertRaises(TypeError):
             json_list3 = Base.from_json_string(json_string1, json_string2)
+
+    def test_create(self):
+        """
+        Testing the create method.
+        """
+        square_dict1 = {'id': 5, 'size': 10, 'x': 1, 'y': 2}
+        square_dict2 = {}
+        Square_create1 = Square.create(**square_dict1)
+        self.assertTrue(type(Square_create1) is Square)
+        # No arg
+        Square_create2 = Square.create()
+        self.assertTrue(type(Square_create2) is Square)
+        # Too many args
+        with self.assertRaises(TypeError):
+            Square_create2 = Square.create(square_dict1, square_dict2)
 
 if __name__ == "__main__":
     unittest.main()
