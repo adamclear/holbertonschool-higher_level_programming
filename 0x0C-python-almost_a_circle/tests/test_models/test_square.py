@@ -93,10 +93,9 @@ class TestSquareClass(unittest.TestCase):
 
     def test_update(self):
         """
-        Testing the updated method.
+        Testing the update method.
         """
         Square1 = Square(10, 1, 2, 5)
-        self.assertEqual(Square1.size, 10)
         # Using args
         Square1.update(10, 20, 2, 3)
         self.assertEqual(Square1.id, 10)
