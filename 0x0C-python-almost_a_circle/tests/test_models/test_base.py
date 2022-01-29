@@ -71,6 +71,29 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(type(json_string) is str)
         json_dict = json.loads(json_string)
         self.assertEqual(json_dict, [dict1, dict2])
+        # Arg is empty list
+        json_string2 = Base.to_json_string([])
+        self.assertTrue(type(json_string2) is str)
+        self.assertEqual(json_string2, "[]")
+        # No arg
+        with self.assertRaises(TypeError):
+            json_string2 = Base.to_json_string()
+
+    def test_save_to_file(self):
+        """
+        Tests the save_to_file method.
+        """
+        Rectangle1 = Rectangle(10, 10, 1, 2, 5)
+        Rectangle.save_to_file([Rectangle1])
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 54)
+        # Empty list
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
+        # No arg
+        with self.assertRaises(TypeError):
+            Rectangle.save_to_file()
 
 if __name__ == "__main__":
     unittest.main()
