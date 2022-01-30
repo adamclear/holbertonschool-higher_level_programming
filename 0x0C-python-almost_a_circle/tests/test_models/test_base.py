@@ -46,23 +46,25 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(len(Base.create.__doc__) >= 1)
         self.assertTrue(len(Base.load_from_file.__doc__) >= 1)
 
-    def test_init(self):
+    def test_ainit(self):
         """
         Tests the init method.
         """
         base1 = Base()
-        self.assertEqual(base1.id, 3)
+        self.assertEqual(base1.id, 1)
         base2 = Base(100)
         self.assertEqual(base2.id, 100)
         base3 = Base()
-        self.assertEqual(base3.id, 4)
+        self.assertEqual(base3.id, 2)
 
     def test_to_json_string(self):
         """
         Tests the to_json_string method.
         """
-        dict1 = {'width': 2, 'height': 2, 'x': 1, 'y': 1, 'id': 50}
-        dict2 = {'width': 3, 'height': 3, 'x': 2, 'y': 2, 'id': 100}
+        dict1 = {'id': 50}
+        dict2 = {'id': 100}
+        json_string = Base.to_json_string([dict1])
+        self.assertTrue(type(json_string) is str)
         json_string = Base.to_json_string([dict1, dict2])
         self.assertTrue(type(json_string) is str)
         json_dict = json.loads(json_string)
