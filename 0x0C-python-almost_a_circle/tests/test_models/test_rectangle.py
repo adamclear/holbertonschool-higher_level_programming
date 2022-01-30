@@ -14,7 +14,7 @@ class TestRectangleClass(unittest.TestCase):
     """
     The Rectangle class test class.
     """
-    def test_pep8(self):
+    def test_1_pep8(self):
         """
         Testing pep8 compliance.
         """
@@ -23,19 +23,19 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_module_docstring(self):
+    def test_2_module_docstring(self):
         """
         Testing module docstring.
         """
         self.assertTrue(len(Rectangle.__doc__) >= 1)
 
-    def test_class_docstring(self):
+    def test_3_class_docstring(self):
         """
         Testing class docstring.
         """
         self.assertTrue(len(Rectangle.__doc__) >= 1)
 
-    def test_method_docstring(self):
+    def test_4_method_docstring(self):
         """
         Testing method docstrings.
         """
@@ -50,7 +50,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(len(Rectangle.update.__doc__) >= 1)
         self.assertTrue(len(Rectangle.to_dictionary.__doc__) >= 1)
 
-    def test_init(self):
+    def test_5_init(self):
         """
         Testing the init method.
         """
@@ -60,6 +60,24 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.height, 12)
         self.assertEqual(Rectangle1.x, 1)
         self.assertEqual(Rectangle1.y, 2)
+        Rectangle2 = Rectangle(1, 2)
+        self.assertEqual(Rectangle2.id, 1)
+        self.assertEqual(Rectangle2.width, 1)
+        self.assertEqual(Rectangle2.height, 2)
+        self.assertEqual(Rectangle2.x, 0)
+        self.assertEqual(Rectangle2.y, 0)
+        Rectangle3 = Rectangle(1, 2, 3)
+        self.assertEqual(Rectangle3.id, 2)
+        self.assertEqual(Rectangle3.width, 1)
+        self.assertEqual(Rectangle3.height, 2)
+        self.assertEqual(Rectangle3.x, 3)
+        self.assertEqual(Rectangle3.y, 0)
+        Rectangle4 = Rectangle(1, 2, 3, 4)
+        self.assertEqual(Rectangle4.id, 3)
+        self.assertEqual(Rectangle4.width, 1)
+        self.assertEqual(Rectangle4.height, 2)
+        self.assertEqual(Rectangle4.x, 3)
+        self.assertEqual(Rectangle4.y, 4)
         # Bad args
         with self.assertRaises(TypeError):
             Rectangle2 = Rectangle(10, 10, 10, 10, 10, 10)
@@ -114,7 +132,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle2 = Rectangle(10, 12, 1, {}, 5)
 
-    def test_width_setter(self):
+    def test_6_width_setter(self):
         """
         Testing width setter.
         """
@@ -135,7 +153,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle1.width = {}
 
-    def test_height_setter(self):
+    def test_7_height_setter(self):
         """
         Testing height setter.
         """
@@ -156,7 +174,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle1.height = {}
 
-    def test_x_setter(self):
+    def test_8_x_setter(self):
         """
         Testing x setter.
         """
@@ -175,7 +193,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle1.x = {}
 
-    def test_y_setter(self):
+    def test_9_y_setter(self):
         """
         Testing y setter.
         """
@@ -194,7 +212,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle1.y = {}
 
-    def test_area(self):
+    def test_10_area(self):
         """
         Testing area method.
         """
@@ -203,7 +221,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(type(rect_area) is int)
         self.assertEqual(rect_area, 120)
 
-    def test_update(self):
+    def test_11_update(self):
         """
         Testing the update method.
         """
@@ -223,7 +241,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.x, 3)
         self.assertEqual(Rectangle1.y, 4)
 
-    def test_to_dictionary(self):
+    def test_12_to_dictionary(self):
         """
         Testing the to_dictionary method.
         """
