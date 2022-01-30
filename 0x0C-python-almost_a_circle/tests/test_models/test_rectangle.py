@@ -61,19 +61,19 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.x, 1)
         self.assertEqual(Rectangle1.y, 2)
         Rectangle2 = Rectangle(1, 2)
-        self.assertEqual(Rectangle2.id, 5)
+        self.assertEqual(Rectangle2.id, 1)
         self.assertEqual(Rectangle2.width, 1)
         self.assertEqual(Rectangle2.height, 2)
         self.assertEqual(Rectangle2.x, 0)
         self.assertEqual(Rectangle2.y, 0)
         Rectangle3 = Rectangle(1, 2, 3)
-        self.assertEqual(Rectangle3.id, 6)
+        self.assertEqual(Rectangle3.id, 2)
         self.assertEqual(Rectangle3.width, 1)
         self.assertEqual(Rectangle3.height, 2)
         self.assertEqual(Rectangle3.x, 3)
         self.assertEqual(Rectangle3.y, 0)
         Rectangle4 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(Rectangle4.id, 7)
+        self.assertEqual(Rectangle4.id, 3)
         self.assertEqual(Rectangle4.width, 1)
         self.assertEqual(Rectangle4.height, 2)
         self.assertEqual(Rectangle4.x, 3)
@@ -250,6 +250,15 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(type(Rectangle1_dict) is dict)
         dict1 = {'id': 5, 'width': 10, 'height': 10, 'x': 1, 'y': 2}
         self.assertEqual(Rectangle1_dict, dict1)
+
+    def test_13_str(self):
+        """
+        Testing the __str__ method
+        """
+        Rectangle1 = Rectangle(10, 10, 1, 2, 5)
+        str_str = Rectangle1.__str__()
+        self.assertTrue(type(str_str) is str)
+        self.assertTrue(len(str_str) == 27)
 
 if __name__ == "__main__":
     unittest.main()
