@@ -61,76 +61,76 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.x, 1)
         self.assertEqual(Rectangle1.y, 2)
         Rectangle2 = Rectangle(1, 2)
-        self.assertEqual(Rectangle2.id, 1)
+        self.assertEqual(Rectangle2.id, 5)
         self.assertEqual(Rectangle2.width, 1)
         self.assertEqual(Rectangle2.height, 2)
         self.assertEqual(Rectangle2.x, 0)
         self.assertEqual(Rectangle2.y, 0)
         Rectangle3 = Rectangle(1, 2, 3)
-        self.assertEqual(Rectangle3.id, 2)
+        self.assertEqual(Rectangle3.id, 6)
         self.assertEqual(Rectangle3.width, 1)
         self.assertEqual(Rectangle3.height, 2)
         self.assertEqual(Rectangle3.x, 3)
         self.assertEqual(Rectangle3.y, 0)
         Rectangle4 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(Rectangle4.id, 3)
+        self.assertEqual(Rectangle4.id, 7)
         self.assertEqual(Rectangle4.width, 1)
         self.assertEqual(Rectangle4.height, 2)
         self.assertEqual(Rectangle4.x, 3)
         self.assertEqual(Rectangle4.y, 4)
         # Bad args
         with self.assertRaises(TypeError):
-            Rectangle2 = Rectangle(10, 10, 10, 10, 10, 10)
+            Rectangle5 = Rectangle(10, 10, 10, 10, 10, 10)
         with self.assertRaises(TypeError):
-            Rectangle2 = Rectangle()
+            Rectangle5 = Rectangle()
         # Bad width
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            Rectangle2 = Rectangle(-10, 12, 1, 2, 5)
+            Rectangle5 = Rectangle(-10, 12, 1, 2, 5)
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
-            Rectangle2 = Rectangle(0, 12, 1, 2, 5)
+            Rectangle5 = Rectangle(0, 12, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle2 = Rectangle("ten", 12, 1, 2, 5)
+            Rectangle5 = Rectangle("ten", 12, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle2 = Rectangle(10.5, 12, 1, 2, 5)
+            Rectangle5 = Rectangle(10.5, 12, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle2 = Rectangle([], 12, 1, 2, 5)
+            Rectangle5 = Rectangle([], 12, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle2 = Rectangle({}, 12, 1, 2, 5)
+            Rectangle5 = Rectangle({}, 12, 1, 2, 5)
         # Bad height
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            Rectangle2 = Rectangle(10, -12, 1, 2, 5)
+            Rectangle5 = Rectangle(10, -12, 1, 2, 5)
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
-            Rectangle2 = Rectangle(10, 0, 1, 2, 5)
+            Rectangle5 = Rectangle(10, 0, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle2 = Rectangle(10, "twelve", 1, 2, 5)
+            Rectangle5 = Rectangle(10, "twelve", 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle2 = Rectangle(10, 12.5, 1, 2, 5)
+            Rectangle5 = Rectangle(10, 12.5, 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle2 = Rectangle(10, [], 1, 2, 5)
+            Rectangle5 = Rectangle(10, [], 1, 2, 5)
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle2 = Rectangle(10, {}, 1, 2, 5)
+            Rectangle5 = Rectangle(10, {}, 1, 2, 5)
         # Bad x
         with self.assertRaisesRegex(ValueError, "x must be >= 0"):
-            Rectangle2 = Rectangle(10, 12, -1, 2, 5)
+            Rectangle5 = Rectangle(10, 12, -1, 2, 5)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle2 = Rectangle(10, 12, "one", 2, 5)
+            Rectangle5 = Rectangle(10, 12, "one", 2, 5)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle2 = Rectangle(10, 12, 1.5, 2, 5)
+            Rectangle5 = Rectangle(10, 12, 1.5, 2, 5)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle2 = Rectangle(10, 12, [], 2, 5)
+            Rectangle5 = Rectangle(10, 12, [], 2, 5)
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle2 = Rectangle(10, 12, {}, 2, 5)
+            Rectangle5 = Rectangle(10, 12, {}, 2, 5)
         # Bad y
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
-            Rectangle2 = Rectangle(10, 12, 1, -2, 5)
+            Rectangle5 = Rectangle(10, 12, 1, -2, 5)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle2 = Rectangle(10, 12, 1, "two", 5)
+            Rectangle5 = Rectangle(10, 12, 1, "two", 5)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle2 = Rectangle(10, 12, 1, 2.5, 5)
+            Rectangle5 = Rectangle(10, 12, 1, 2.5, 5)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle2 = Rectangle(10, 12, 1, [], 5)
+            Rectangle5 = Rectangle(10, 12, 1, [], 5)
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
-            Rectangle2 = Rectangle(10, 12, 1, {}, 5)
+            Rectangle5 = Rectangle(10, 12, 1, {}, 5)
 
     def test_6_width_setter(self):
         """
