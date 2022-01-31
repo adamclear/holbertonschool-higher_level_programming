@@ -243,6 +243,13 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.id, 20)
         self.assertEqual(Rectangle1.x, 3)
         self.assertEqual(Rectangle1.y, 4)
+        # No args
+        Rectangle1.update()
+        self.assertEqual(Rectangle1.width, 30)
+        self.assertEqual(Rectangle1.height, 30)
+        self.assertEqual(Rectangle1.id, 20)
+        self.assertEqual(Rectangle1.x, 3)
+        self.assertEqual(Rectangle1.y, 4)
 
     def test_12_to_dictionary(self):
         """
@@ -266,7 +273,7 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
-        # Empty args
+        # Empty list
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)

@@ -152,6 +152,12 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.id, 20)
         self.assertEqual(Square1.x, 3)
         self.assertEqual(Square1.y, 4)
+        # No args
+        Square1.update()
+        self.assertEqual(Square1.size, 30)
+        self.assertEqual(Square1.id, 20)
+        self.assertEqual(Square1.x, 3)
+        self.assertEqual(Square1.y, 4)
 
     def test_8_to_dictionary(self):
         """
@@ -175,7 +181,7 @@ class TestSquareClass(unittest.TestCase):
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
-        # Empty args
+        # Empty list
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
