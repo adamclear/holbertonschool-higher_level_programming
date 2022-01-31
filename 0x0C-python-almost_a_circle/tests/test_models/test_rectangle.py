@@ -298,5 +298,15 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle1.display()
             self.assertEqual(disp.getvalue(), expected_display)
 
+    def test_15_str(self):
+        """
+        Testing Rectangle.__str__.
+        """
+        Rectangle1 = Rectangle(2, 2)
+        expected_display = "[Rectangle] (1) 0/0 - 2/2\n"
+        with patch("sys.stdout", new=StringIO()) as disp:
+            print(Rectangle1)
+            self.assertEqual(disp.getvalue(), expected_display)
+
 if __name__ == "__main__":
     unittest.main()

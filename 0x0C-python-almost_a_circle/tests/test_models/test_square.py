@@ -206,5 +206,15 @@ class TestSquareClass(unittest.TestCase):
             Square1.display()
             self.assertEqual(disp.getvalue(), expected_display)
 
+    def test_a3_str(self):
+        """
+        Testing Square.__str__.
+        """
+        Square1 = Square(2)
+        expected_display = "[Square] (1) 0/0 - 2\n"
+        with patch("sys.stdout", new=StringIO()) as disp:
+            print(Square1)
+            self.assertEqual(disp.getvalue(), expected_display)
+
 if __name__ == "__main__":
     unittest.main()
