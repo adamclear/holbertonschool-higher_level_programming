@@ -251,5 +251,22 @@ class TestRectangleClass(unittest.TestCase):
         dict1 = {'id': 5, 'width': 10, 'height': 10, 'x': 1, 'y': 2}
         self.assertEqual(Rectangle1_dict, dict1)
 
+    def test_13_Rectangle_save_to_file(self):
+        """
+        Testing Rectangle.save_to_file.
+        """
+        Rectangle1 = Rectangle(10, 12, 1, 2, 5)
+        Rectangle.save_to_file([Rectangle1])
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 54)
+        # Passing None
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
+        # Empty args
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
+
 if __name__ == "__main__":
     unittest.main()
