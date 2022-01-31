@@ -205,6 +205,12 @@ class TestSquareClass(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as disp:
             Square1.display()
             self.assertEqual(disp.getvalue(), expected_display)
+        # With x & y
+        Square1 = Square(2, 1, 1)
+        expected_display = "\n ##\n ##\n"
+        with patch("sys.stdout", new=StringIO()) as disp:
+            Square1.display()
+            self.assertEqual(disp.getvalue(), expected_display)
 
     def test_a3_str(self):
         """

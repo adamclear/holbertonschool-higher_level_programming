@@ -297,6 +297,12 @@ class TestRectangleClass(unittest.TestCase):
         with patch("sys.stdout", new=StringIO()) as disp:
             Rectangle1.display()
             self.assertEqual(disp.getvalue(), expected_display)
+        # With x & y
+        Rectangle1 = Rectangle(2, 2, 1, 1)
+        expected_display = "\n ##\n ##\n"
+        with patch("sys.stdout", new=StringIO()) as disp:
+            Rectangle1.display()
+            self.assertEqual(disp.getvalue(), expected_display)
 
     def test_15_str(self):
         """
