@@ -96,6 +96,10 @@ class TestBaseClass(unittest.TestCase):
         # Too many args
         with self.assertRaises(TypeError):
             Rectangle.save_to_file([Rectangle1], [Rectangle2])
+        # Passing None
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
         # Setup for load_from_file test
         Rectangle.save_to_file([Rectangle1])
 

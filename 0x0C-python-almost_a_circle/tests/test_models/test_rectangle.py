@@ -251,12 +251,5 @@ class TestRectangleClass(unittest.TestCase):
         dict1 = {'id': 5, 'width': 10, 'height': 10, 'x': 1, 'y': 2}
         self.assertEqual(Rectangle1_dict, dict1)
 
-    def test_13_str(self):
-        """
-        Testing the __str__ method.
-        """
-        Rectangle1 = Rectangle(10, 10, 1, 2, 5)
-        print(Rectangle1)
-        
 if __name__ == "__main__":
     unittest.main()
