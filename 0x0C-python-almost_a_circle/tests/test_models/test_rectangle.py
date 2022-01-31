@@ -271,5 +271,13 @@ class TestRectangleClass(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
 
+    def test_14_Rectangle_load_from_file(self):
+        """
+        Testing Rectangle.load_from_file.
+        """
+        Rectangle_list = Rectangle.load_from_file()
+        self.assertTrue(type(Rectangle_list) is list)
+        self.assertTrue(len(Rectangle_list) == 1)
+
 if __name__ == "__main__":
     unittest.main()

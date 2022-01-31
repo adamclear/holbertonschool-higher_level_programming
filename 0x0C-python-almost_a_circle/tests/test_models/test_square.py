@@ -180,5 +180,13 @@ class TestSquareClass(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
 
+    def test_a1_square_load_from_file(self):
+        """
+        Testing Square.load_from_file.
+        """
+        Square_list = Square.load_from_file()
+        self.assertTrue(type(Square_list) is list)
+        self.assertTrue(len(Square_list) == 1)
+
 if __name__ == "__main__":
     unittest.main()
