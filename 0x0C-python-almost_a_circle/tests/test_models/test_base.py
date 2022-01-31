@@ -93,7 +93,7 @@ class TestBaseClass(unittest.TestCase):
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 54)
         # Empty list
-        Rectangle.save_to_file([])
+        Base.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
         # No arg
