@@ -2,9 +2,11 @@
 """
 Unittest for Rectangle class.
 """
+from io import StringIO
 import unittest
 from models.rectangle import Rectangle
 import pep8
+from unittest.mock import patch
 
 
 class TestRectangleClass(unittest.TestCase):
@@ -285,6 +287,16 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle_list = Rectangle.load_from_file()
         self.assertTrue(type(Rectangle_list) is list)
         self.assertTrue(len(Rectangle_list) == 0)
+
+    def test_15_display(self):
+        """
+        Testing Rectangle.display.
+        """
+        Rectangle1 = Rectangle(2, 2)
+        expected_display = "##\n##\n"
+        with patch("sys.stdout", new=StringIO()) as disp:
+            Rectangle1.display()
+            self.assertEqual(disp.getvalue(), expected_display)
 
 if __name__ == "__main__":
     unittest.main()
