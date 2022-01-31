@@ -15,6 +15,13 @@ class Base:
     """
     __nb_objects = 0
 
+    @classmethod
+    def clear(cls):
+        """
+        This method resets the nb_objects.
+        """
+        Base.__nb_objects = 0
+
     def __init__(self, id=None):
         """
         This method instantiates the object.

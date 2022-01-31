@@ -3,9 +3,9 @@
 Unittest for Rectangle class.
 """
 import unittest
-import json
-from models.base import Base
-from models.rectangle import Rectangle
+#import json
+#from models.base import Base
+#from models.rectangle import Rectangle
 from models.square import Square
 import pep8
 
@@ -14,7 +14,13 @@ class TestSquareClass(unittest.TestCase):
     """
     The Rectangle class test class.
     """
-    def test_pep8(self):
+    def tearDown(self):
+        """
+        Teardown method.
+        """
+        Square.clear()
+    
+    def test_1_pep8(self):
         """
         Testing pep8 compliance.
         """
@@ -23,19 +29,19 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_module_docstring(self):
+    def test_2_module_docstring(self):
         """
         Testing module docstring.
         """
         self.assertTrue(len(Square.__doc__) >= 1)
 
-    def test_class_docstring(self):
+    def test_3_class_docstring(self):
         """
         Testing class docstring.
         """
         self.assertTrue(len(Square.__doc__) >= 1)
 
-    def test_method_docstring(self):
+    def test_4_method_docstring(self):
         """
         Testing method docstrings.
         """
@@ -45,7 +51,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(len(Square.update.__doc__) >= 1)
         self.assertTrue(len(Square.to_dictionary.__doc__) >= 1)
 
-    def test_init(self):
+    def test_5_init(self):
         """
         Testing the init method.
         """
@@ -54,6 +60,21 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.size, 10)
         self.assertEqual(Square1.x, 1)
         self.assertEqual(Square1.y, 2)
+        Square2 = Square(1)
+        self.assertEqual(Square2.id, 1)
+        self.assertEqual(Square2.size, 1)
+        self.assertEqual(Square2.x, 0)
+        self.assertEqual(Square2.y, 0)
+        Square3 = Square(1, 2)
+        self.assertEqual(Square3.id, 2)
+        self.assertEqual(Square3.size, 1)
+        self.assertEqual(Square3.x, 2)
+        self.assertEqual(Square3.y, 0)
+        Square4 = Square(1, 2, 3)
+        self.assertEqual(Square4.id, 3)
+        self.assertEqual(Square4.size, 1)
+        self.assertEqual(Square4.x, 2)
+        self.assertEqual(Square4.y, 3)
         # Bad args
         with self.assertRaises(TypeError):
             Square2 = Square(10, 10, 10, 10, 10)
@@ -95,7 +116,7 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square2 = Square(10, 1, -2, 5)
 
-    def test_size_setter(self):
+    def test_6_size_setter(self):
         """
         Testing the setter for Square size.
         """
@@ -117,7 +138,7 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square1.size = 0
 
-    def test_update(self):
+    def test_7_update(self):
         """
         Testing the update method.
         """
@@ -135,7 +156,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.x, 3)
         self.assertEqual(Square1.y, 4)
 
-    def test_to_dictionary(self):
+    def test_8_to_dictionary(self):
         """
         Testing the to_dictionary method.
         """
@@ -144,6 +165,23 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(type(Square1_dict) is dict)
         dict1 = {'id': 5, 'size': 10, 'x': 1, 'y': 2}
         self.assertEqual(Square1_dict, dict1)
+
+    def test_9_square_save_to_file(self):
+        """
+        Testing square.save_to_file.
+        """
+        Square1 = Square(10, 1, 2, 5)
+        Square.save_to_file([Square1])
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) == 39)
+        # Passing None
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
+        # Empty args
+        Square.save_to_file([])
+        with open("Square.json", "r") as file:
+            self.assertTrue(len(file.read()) == 2)
 
 if __name__ == "__main__":
     unittest.main()
