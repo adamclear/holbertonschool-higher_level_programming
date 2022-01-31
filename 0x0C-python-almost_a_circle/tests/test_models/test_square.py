@@ -186,7 +186,7 @@ class TestSquareClass(unittest.TestCase):
         """
         Square_list = Square.load_from_file()
         self.assertTrue(type(Square_list) is list)
-        self.assertTrue(len(Square_list) == 1)
+        self.assertTrue(len(Square_list) == 0)
 
 if __name__ == "__main__":
     unittest.main()

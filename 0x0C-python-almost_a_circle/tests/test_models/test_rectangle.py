@@ -277,7 +277,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         Rectangle_list = Rectangle.load_from_file()
         self.assertTrue(type(Rectangle_list) is list)
-        self.assertTrue(len(Rectangle_list) == 1)
+        self.assertTrue(len(Rectangle_list) == 0)
 
 if __name__ == "__main__":
     unittest.main()
