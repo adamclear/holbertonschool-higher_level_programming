@@ -92,10 +92,6 @@ class TestBaseClass(unittest.TestCase):
         Rectangle.save_to_file([Rectangle1])
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 54)
-        # Empty list
-        Rectangle.save_to_file([])
-        with open("Rectangle.json", "r") as file:
-            self.assertTrue(len(file.read()) == 2)
         # No arg
         with self.assertRaises(TypeError):
             Rectangle.save_to_file()
