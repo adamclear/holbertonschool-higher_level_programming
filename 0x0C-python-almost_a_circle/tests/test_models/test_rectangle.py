@@ -278,7 +278,7 @@ class TestRectangleClass(unittest.TestCase):
         # Empty list
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
+            self.assertTrue(len(file.read()) == 2)
 
     def test_Rectangle_load_from_file(self):
         """
