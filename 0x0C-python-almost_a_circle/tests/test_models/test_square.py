@@ -184,7 +184,7 @@ class TestSquareClass(unittest.TestCase):
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
         # Empty list
-        Square.save_to_file([])
+        Square.save_to_file([None])
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
 
