@@ -19,7 +19,7 @@ class TestRectangleClass(unittest.TestCase):
         """
         Rectangle.clear()
 
-    def test_1_pep8(self):
+    def test_pep8(self):
         """
         Testing pep8 compliance.
         """
@@ -28,19 +28,19 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_2_module_docstring(self):
+    def test_module_docstring(self):
         """
         Testing module docstring.
         """
         self.assertTrue(len(Rectangle.__doc__) >= 1)
 
-    def test_3_class_docstring(self):
+    def test_class_docstring(self):
         """
         Testing class docstring.
         """
         self.assertTrue(len(Rectangle.__doc__) >= 1)
 
-    def test_4_method_docstring(self):
+    def test_method_docstring(self):
         """
         Testing method docstrings.
         """
@@ -55,7 +55,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(len(Rectangle.update.__doc__) >= 1)
         self.assertTrue(len(Rectangle.to_dictionary.__doc__) >= 1)
 
-    def test_5_init(self):
+    def test_init(self):
         """
         Testing the init method.
         """
@@ -137,7 +137,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle5 = Rectangle(10, 12, 1, {}, 5)
 
-    def test_6_width_setter(self):
+    def test_width_setter(self):
         """
         Testing width setter.
         """
@@ -158,7 +158,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
             Rectangle1.width = {}
 
-    def test_7_height_setter(self):
+    def test_height_setter(self):
         """
         Testing height setter.
         """
@@ -179,7 +179,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
             Rectangle1.height = {}
 
-    def test_8_x_setter(self):
+    def test_x_setter(self):
         """
         Testing x setter.
         """
@@ -198,7 +198,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle1.x = {}
 
-    def test_9_y_setter(self):
+    def test_y_setter(self):
         """
         Testing y setter.
         """
@@ -217,7 +217,7 @@ class TestRectangleClass(unittest.TestCase):
         with self.assertRaisesRegex(TypeError, "y must be an integer"):
             Rectangle1.y = {}
 
-    def test_10_area(self):
+    def test_area(self):
         """
         Testing area method.
         """
@@ -226,7 +226,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertTrue(type(rect_area) is int)
         self.assertEqual(rect_area, 120)
 
-    def test_11_update(self):
+    def test_update(self):
         """
         Testing the update method.
         """
@@ -253,7 +253,7 @@ class TestRectangleClass(unittest.TestCase):
         self.assertEqual(Rectangle1.x, 3)
         self.assertEqual(Rectangle1.y, 4)
 
-    def test_12_to_dictionary(self):
+    def test_to_dictionary(self):
         """
         Testing the to_dictionary method.
         """
@@ -263,7 +263,7 @@ class TestRectangleClass(unittest.TestCase):
         dict1 = {'id': 5, 'width': 10, 'height': 10, 'x': 1, 'y': 2}
         self.assertEqual(Rectangle1_dict, dict1)
 
-    def test_13_Rectangle_save_to_file(self):
+    def test_Rectangle_save_to_file(self):
         """
         Testing Rectangle.save_to_file.
         """
@@ -275,25 +275,20 @@ class TestRectangleClass(unittest.TestCase):
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
-
-    def test_13a_Rectangle_save_to_file(self):
-        """
-        Testing Rectangle.save_to_file
-        """
         # Empty list
         Rectangle.save_to_file([])
         with open("Rectangle.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
 
-    def test_14_Rectangle_load_from_file(self):
+    def test_Rectangle_load_from_file(self):
         """
         Testing Rectangle.load_from_file.
         """
         Rectangle_list = Rectangle.load_from_file()
         self.assertTrue(type(Rectangle_list) is list)
-        self.assertTrue(len(Rectangle_list) == 0)
+        self.assertTrue(len(Rectangle_list) == 1)
 
-    def test_15_display(self):
+    def test_display(self):
         """
         Testing Rectangle.display.
         """
@@ -309,7 +304,7 @@ class TestRectangleClass(unittest.TestCase):
             Rectangle1.display()
             self.assertEqual(disp.getvalue(), expected_display)
 
-    def test_15_str(self):
+    def test_str(self):
         """
         Testing Rectangle.__str__.
         """

@@ -19,7 +19,7 @@ class TestSquareClass(unittest.TestCase):
         """
         Square.clear()
     
-    def test_1_pep8(self):
+    def test_pep8(self):
         """
         Testing pep8 compliance.
         """
@@ -28,19 +28,19 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_2_module_docstring(self):
+    def test_module_docstring(self):
         """
         Testing module docstring.
         """
         self.assertTrue(len(Square.__doc__) >= 1)
 
-    def test_3_class_docstring(self):
+    def test_class_docstring(self):
         """
         Testing class docstring.
         """
         self.assertTrue(len(Square.__doc__) >= 1)
 
-    def test_4_method_docstring(self):
+    def test_method_docstring(self):
         """
         Testing method docstrings.
         """
@@ -50,7 +50,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(len(Square.update.__doc__) >= 1)
         self.assertTrue(len(Square.to_dictionary.__doc__) >= 1)
 
-    def test_5_init(self):
+    def test_init(self):
         """
         Testing the init method.
         """
@@ -115,7 +115,7 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             Square2 = Square(10, 1, -2, 5)
 
-    def test_6_size_setter(self):
+    def test_size_setter(self):
         """
         Testing the setter for Square size.
         """
@@ -137,7 +137,7 @@ class TestSquareClass(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "width must be > 0"):
             Square1.size = 0
 
-    def test_7_update(self):
+    def test_update(self):
         """
         Testing the update method.
         """
@@ -161,7 +161,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(Square1.x, 3)
         self.assertEqual(Square1.y, 4)
 
-    def test_8_to_dictionary(self):
+    def test_to_dictionary(self):
         """
         Testing the to_dictionary method.
         """
@@ -171,7 +171,7 @@ class TestSquareClass(unittest.TestCase):
         dict1 = {'id': 5, 'size': 10, 'x': 1, 'y': 2}
         self.assertEqual(Square1_dict, dict1)
 
-    def test_9_square_save_to_file(self):
+    def test_square_save_to_file(self):
         """
         Testing square.save_to_file.
         """
@@ -183,17 +183,12 @@ class TestSquareClass(unittest.TestCase):
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
-
-    def test_aa_square_save_to_file(self):
-        """
-        Testing square.save_to_file.
-        """
         # Empty list
         Square.save_to_file([])
         with open("Square.json", "r") as file:
             self.assertTrue(len(file.read()) == 2)
 
-    def test_a1_square_load_from_file(self):
+    def test_square_load_from_file(self):
         """
         Testing Square.load_from_file.
         """
@@ -201,7 +196,7 @@ class TestSquareClass(unittest.TestCase):
         self.assertTrue(type(Square_list) is list)
         self.assertTrue(len(Square_list) == 0)
 
-    def test_a2_display(self):
+    def test_display(self):
         """
         Testing Rectangle.display.
         """
@@ -217,7 +212,7 @@ class TestSquareClass(unittest.TestCase):
             Square1.display()
             self.assertEqual(disp.getvalue(), expected_display)
 
-    def test_a3_str(self):
+    def test_str(self):
         """
         Testing Square.__str__.
         """

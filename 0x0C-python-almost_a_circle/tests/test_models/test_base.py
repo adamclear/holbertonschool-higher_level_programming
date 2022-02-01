@@ -20,7 +20,7 @@ class TestBaseClass(unittest.TestCase):
         """
         Base.clear()
 
-    def test_1_pep8(self):
+    def test_pep8(self):
         """
         Testing pep8 compliance.
         """
@@ -29,19 +29,19 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(result.total_errors, 0,
                          "Found code style errors (and warnings).")
 
-    def test_2_module_docstring(self):
+    def test_module_docstring(self):
         """
         Testing module docstring.
         """
         self.assertTrue(len(Base.__doc__) >= 1)
 
-    def test_3_class_docstring(self):
+    def test_class_docstring(self):
         """
         Testing class docstring.
         """
         self.assertTrue(len(Base.__doc__) >= 1)
 
-    def test_4_method_docstring(self):
+    def test_method_docstring(self):
         """
         Testing method docstrings.
         """
@@ -52,7 +52,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertTrue(len(Base.create.__doc__) >= 1)
         self.assertTrue(len(Base.load_from_file.__doc__) >= 1)
 
-    def test_5_init(self):
+    def test_init(self):
         """
         Tests the init method.
         """
@@ -63,7 +63,7 @@ class TestBaseClass(unittest.TestCase):
         base3 = Base()
         self.assertEqual(base3.id, 1)
 
-    def test_6_to_json_string(self):
+    def test_to_json_string(self):
         """
         Tests the to_json_string method.
         """
@@ -83,7 +83,7 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             json_string2 = Base.to_json_string()
 
-    def test_7_save_to_file(self):
+    def test_save_to_file(self):
         """
         Tests the save_to_file method.
         """
@@ -101,7 +101,7 @@ class TestBaseClass(unittest.TestCase):
         # Setup for load_from_file test
         Rectangle.save_to_file([Rectangle1])
 
-    def test_8_from_json_string(self):
+    def test_from_json_string(self):
         """
         Testing the from_json_string method.
         """
@@ -119,7 +119,7 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             json_list3 = Base.from_json_string(json_string1, json_string2)
 
-    def test_9_create(self):
+    def test_create(self):
         """
         Testing the create method.
         """
@@ -134,13 +134,13 @@ class TestBaseClass(unittest.TestCase):
         with self.assertRaises(TypeError):
             Square_create2 = Square.create(square_dict1, square_dict2)
 
-    def test_a1_load_from_file(self):
+    def test_load_from_file(self):
         """
         Testing the load_from_file method.
         """
         Rectangle_list = Rectangle.load_from_file()
         self.assertTrue(type(Rectangle_list) is list)
-        self.assertTrue(len(Rectangle_list) == 1)
+        self.assertTrue(len(Rectangle_list) == 0)
         # No file
         Square_list = Square.load_from_file()
         self.assertTrue(type(Square_list) is list)
