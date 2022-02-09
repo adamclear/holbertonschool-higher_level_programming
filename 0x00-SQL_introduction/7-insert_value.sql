@@ -2,8 +2,7 @@
 INSERT INTO first_table(
     id,
     name
-)
-VALUES(
+) VALUES(
     89,
     Best School
 );
