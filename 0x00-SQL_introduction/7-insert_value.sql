@@ -4,5 +4,5 @@ INSERT INTO first_table(
     name
 ) VALUES(
     89,
-    Best School
+    'Best School'
 );
