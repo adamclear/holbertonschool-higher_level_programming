@@ -1,0 +1,1 @@
+This lesson is about more SQL commands and queries.
