@@ -5,6 +5,7 @@ WHERE state_id
 IN (
     SELECT id
     FROM hbtn_0d_usa.states
-    WHERE name = "California"
+    WHERE name
+    LIKE '%California%'
 )
-ORDER BY id ASC, name;
+ORDER BY id ASC;
