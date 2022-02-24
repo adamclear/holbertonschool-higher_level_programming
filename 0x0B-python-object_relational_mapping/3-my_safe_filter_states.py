@@ -18,7 +18,7 @@ if __name__ == "__main__":
         SELECT * FROM states
         WHERE name LIKE BINARY '{}'
         ORDER BY states.id ASC
-        """.format(argv[4].split(" ")[0]))
+        """.format(argv[4].split()[0]))
 
     for row in cursor.fetchall():
         print(row)
