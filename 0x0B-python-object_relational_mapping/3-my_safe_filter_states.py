@@ -15,13 +15,13 @@ if __name__ == "__main__":
 
     for char in argv[4]:
         if char.isalpha is False:
-            argv[4] = argv[4].split(char)[0]
+            statename = argv[4].split(char)[0]
 
     cursor.execute("""
         SELECT * FROM states
         WHERE name LIKE BINARY '{}'
         ORDER BY states.id ASC
-        """.format(argv[4]))
+        """.format(statename))
 
     for row in cursor.fetchall():
         print(row)
