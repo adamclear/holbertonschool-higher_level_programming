@@ -20,11 +20,7 @@ if __name__ == "__main__":
         ORDER BY cities.id ASC
         """.format(argv[4].split()[0]))
 
-    citylist = []
-    for row in cursor.fetchall():
-        citylist.append(row)
-    citystring = ', '.join(citylist)
-    print(citystring)
+    print(', '.join(rec[0] for rec in cursor.fetchall()))
 
     cursor.close()
     dbconn.close()
