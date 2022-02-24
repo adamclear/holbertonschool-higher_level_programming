@@ -13,11 +13,9 @@ if __name__ == "__main__":
 
     cursor = dbconn.cursor()
 
-    x = 0
     for char in argv[4]:
         if char.isalpha is False:
-            argv[4] = argv[4][:x]
-            x += 1
+            argv[4] = argv[4].split(char)[0]
 
     cursor.execute("""
         SELECT * FROM states
