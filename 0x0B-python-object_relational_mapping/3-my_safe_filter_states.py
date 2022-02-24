@@ -13,9 +13,12 @@ if __name__ == "__main__":
 
     cursor = dbconn.cursor()
 
+    x = 0
+    nonochars = ["'", ",", ";", ":"]
     for char in argv[4]:
-        if char.isalpha is False:
-            statename = argv[4].split(char)[0]
+        if char in nonochars:
+            statename = argv[4][:x]
+        x += 1
 
     cursor.execute("""
         SELECT * FROM states
