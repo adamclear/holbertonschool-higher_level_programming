@@ -2,6 +2,7 @@
 """
 This module contains the method: select_states.
 """
+
 import MySQLdb
 
 
