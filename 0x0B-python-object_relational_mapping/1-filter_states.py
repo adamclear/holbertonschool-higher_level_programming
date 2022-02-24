@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cursor = dbconn.cursor()
 
     cursor.execute("""SELECT * FROM states
-    WHERE name LIKE 'N%'""")
+    WHERE name LIKE 'N%' ORDER BY id""")
     for row in cursor.fetchall():
         print(row)
 
