@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     x = 0
     for char in argv[4]:
-        if char.isalpha == False:
+        if char.isalpha is False:
             argv[4] = argv[4][:x]
             x += 1
 
