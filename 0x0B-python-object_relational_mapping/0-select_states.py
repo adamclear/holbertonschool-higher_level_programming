@@ -16,5 +16,6 @@ def select_states():
     cursor.close()
     dbconn.close()
 
+
 if __name__ == "__main__":
     select_states()
