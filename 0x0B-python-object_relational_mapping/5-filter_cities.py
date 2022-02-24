@@ -15,7 +15,7 @@ if __name__ == "__main__":
 
     cursor.execute("""
         SELECT cities.name FROM states
-        JOIN cities on states.id = cities.state_id
+        JOIN cities ON states.id = cities.state_id
         WHERE states.name = '{}'
         ORDER BY cities.id""".format(argv[4].split()[0]))
 
