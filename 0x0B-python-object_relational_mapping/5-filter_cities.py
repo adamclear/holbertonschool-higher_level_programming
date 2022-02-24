@@ -15,12 +15,13 @@ if __name__ == "__main__":
 
     cursor.execute("""
         SELECT cities.name FROM states
-        JOIN cities ON states.id = cities.state_id
+        JOIN cities ON cities.state_id = states.id
         WHERE states.name = '{}'
-        ORDER BY cities.id""".format(argv[4].split()[0]))
+        ORDER BY cities.id ASC
+        """.format(argv[4].split()[0]))
 
     for row in cursor.fetchall():
-        print(row)
+        print(', '.join(row))
 
     cursor.close()
     dbconn.close()
