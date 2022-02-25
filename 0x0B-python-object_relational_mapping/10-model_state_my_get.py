@@ -18,7 +18,7 @@ if __name__ == "__main__":
     dbsession = sessionmaker(bind=dbengine)
 
     try:
-        print(dbsession().query(State).filter(State.name == argv[4])[0].id)
+        print(dbsession().query(State).filter(State.name == argv[4].split()[0]).id)
 
     except Exception:
         print("Not Found")
