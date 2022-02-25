@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists the State object from the DB hbtn_0e_6_usa
-that matches the name passed as argument, safe from SQL injection.
+This script adds the State object "Louisiana" to the DB
+hbtn_0e_6_usa.
 """
 from sys import argv
 from sqlalchemy import create_engine
