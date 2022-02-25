@@ -16,10 +16,11 @@ if __name__ == "__main__":
 
     Base.metadata.create_all(dbengine)
     dbsession = sessionmaker(bind=dbengine)
+    dbs = dbsession()
 
     newstate = State(name="Louisiana")
-    dbsession().add(newstate)
-    dbsession().commit()
+    dbs.add(newstate)
+    dbs.commit()
     print("{}".format(newstate.id))
 
     dbsession().close
