@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script lists the State objects from the DB hbtn_0e_6_usa
-that contain the letter 'a' in their name.
+This script lists the State object from the DB hbtn_0e_6_usa
+that matches the name passed as argument, safe from SQL injection.
 """
 from sys import argv
 from sqlalchemy import create_engine
@@ -22,6 +22,6 @@ if __name__ == "__main__":
             State.name == argv[4])[0].id)
 
     except Exception:
-        print("Not Found")
+        print("Not found")
 
     dbsession().close
