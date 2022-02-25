@@ -19,7 +19,7 @@ if __name__ == "__main__":
 
     try:
         print(dbsession().query(State).filter(
-            State.name == argv[4].split()[0]).id)
+            State.name == argv[4])[0].id)
 
     except Exception:
         print("Not Found")
