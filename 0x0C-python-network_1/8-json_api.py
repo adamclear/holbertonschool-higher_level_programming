@@ -11,15 +11,12 @@ if __name__ == '__main__':
         q = ""
     else:
         q = argv[1]
-    url = 'http://0.0.0.0:5000/search_user'
-    request = post(url, data={'q': q})
+    request = post('http://0.0.0.0:5000/search_user', data={'q': q})
     try:
         postreply = request.json()
-        id = postreply.get('id')
-        name = postreply.get('name')
         if len(postreply) == 0:
             print("No result")
         else:
-            print("[{}] {}".format(id, name))
+            print("[{}] {}".format(postreply['id'], postreply['name']))
     except Exception:
         print("Not a valid JSON")
