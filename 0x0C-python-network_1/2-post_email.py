@@ -5,13 +5,13 @@ This module displays the response of a POST request
 
 
 if __name__ == '__main__':
-    from urllib import request, parse
+    from urllib.request import Request, urlopen
+    from urllib.parse import urlencode
     import sys
 
     email = {'email': sys.argv[2]}
-    data = parse.urlencode(email).encode('UTF-8')
-    req = request.Request(sys.argv[1], email)
+    data = urlencode(email).encode('UTF-8')
+    req = Request(sys.argv[1], email)
 
-    with request.urlopen(req) as reply:
-        html = reply.read()
-        print(html.decode('UTF-8'))
+    with urlopen(req) as reply:
+        print(reply.read().decode('UTF-8'))
