@@ -5,7 +5,8 @@ This module uses urllib to fetch a URL.
 
 
 if __name__=='__main__':
-    import urllib
+    import urllib.request
+    import urllib.parse
 
     with urllib.request.urlopen(
         'https://intranet.hbtn.io/status') as reply:
