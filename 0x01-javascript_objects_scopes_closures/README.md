@@ -1,0 +1,1 @@
+This lesson is all about Javascript objects, scopes, & closures.
